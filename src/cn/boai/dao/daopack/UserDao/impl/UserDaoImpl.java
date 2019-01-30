@@ -4,11 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import cn.boai.dao.daopack.UserDao.UserDao;
-import cn.boai.db.DBHelper;
 import cn.boai.pojo.User;
 
 public class UserDaoImpl implements UserDao{

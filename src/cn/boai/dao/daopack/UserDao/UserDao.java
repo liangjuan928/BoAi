@@ -2,7 +2,6 @@ package cn.boai.dao.daopack.UserDao;
 
 import java.sql.Connection;
 import java.util.List;
-import java.util.Map;
 
 import cn.boai.pojo.User;
 
