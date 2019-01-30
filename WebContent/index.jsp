@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>博爱母婴商城首页</title>
+  <title>博爱母婴商城首页（娟改啦）</title>
   <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
   <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
   <script type="text/javascript" src="res/layui/layui.js"></script>
@@ -15,7 +15,7 @@
     <div class="site-nav w1200">
       <p class="sn-back-home">
         <i class="layui-icon layui-icon-home"></i>
-        <a href="#">首页 我在这里改动啦</a>
+        <a href="#">首页</a>
       </p>
       <div class="sn-quick-menu">
         <div class="login"><a href="login.jsp">登录</a></div>
