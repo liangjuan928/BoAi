@@ -1,4 +1,4 @@
-package servlet;
+package cn.boai.web.until;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -29,7 +29,8 @@ public class FilterCharset implements Filter{
 			   req.setCharacterEncoding("utf-8");
 		   }
 		   if ("get".equalsIgnoreCase(method)){
-			   //创建request装饰实现类
+			   //创建request装饰实现类  
+			   
 			  req=new Myservlet(req);
 //			 所有参数信息
 //				Map map = req.getParameterMap();
