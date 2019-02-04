@@ -1,4 +1,4 @@
-package untils;
+package cn.boai.util;
 
 import java.util.UUID;
 
