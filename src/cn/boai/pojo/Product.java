@@ -6,17 +6,17 @@ public class Product implements Serializable{
 	public Product() {
 	}
 	
-	private String pro_id;
-	private String pro_title;
-	private String pro_describe;
-	private String pro_key;
-	private String pro_oldprice;
-	private String pro_newprice;
-	private String pro_sales;
-	private String pro_photo;
-	private String pro_intro;
-	private Integer type_id;
-	private String pro_def;
+	private String pro_id="";
+	private String pro_title="";
+	private String pro_describe="";
+	private String pro_key="";
+	private String pro_oldprice="";
+	private String pro_newprice="";
+	private String pro_sales="";
+	private String pro_photo="";
+	private String pro_intro="";
+	private Integer type_id=0;
+	private String pro_def="";
 	public String getPro_id() {
 		return pro_id;
 	}
@@ -28,6 +28,13 @@ public class Product implements Serializable{
 	}
 	public void setPro_title(String pro_title) {
 		this.pro_title = pro_title;
+	}
+	@Override
+	public String toString() {
+		return "Product [pro_id=" + pro_id + ", pro_title=" + pro_title + ", pro_describe=" + pro_describe
+				+ ", pro_key=" + pro_key + ", pro_oldprice=" + pro_oldprice + ", pro_newprice=" + pro_newprice
+				+ ", pro_sales=" + pro_sales + ", pro_photo=" + pro_photo + ", pro_intro=" + pro_intro + ", type_id="
+				+ type_id + ", pro_def=" + pro_def + "]";
 	}
 	public String getPro_describe() {
 		return pro_describe;
