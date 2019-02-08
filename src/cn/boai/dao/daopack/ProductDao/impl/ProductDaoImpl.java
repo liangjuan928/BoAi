@@ -13,6 +13,7 @@ import cn.boai.db.DBHelper;
 import cn.boai.pojo.Address;
 import cn.boai.pojo.Product;
 import cn.boai.pojo.User;
+import cn.boai.util.UUIDHelp;
 
 public class ProductDaoImpl implements ProductDao {
 
@@ -22,7 +23,8 @@ public class ProductDaoImpl implements ProductDao {
 		String sql = "insert into product(pro_id,pro_title,pro_describe,pro_key,pro_oldprice,pro_newprice,pro_sales,pro_photo,pro_intro,type_id,pro_def) values(?,?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = null;
 		ps = conn.prepareStatement(sql);
-		ps.setString(1, product.getPro_id());
+		String id=UUIDHelp.GetUUID();
+		ps.setString(1, id);    //使用uuid作为主键
 		ps.setString(2, product.getPro_title());
 		ps.setString(3, product.getPro_describe());
 		ps.setString(4, product.getPro_key());

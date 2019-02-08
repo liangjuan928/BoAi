@@ -6,8 +6,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Test;
+
 import cn.boai.dao.daopack.UserDao.UserDao;
+import cn.boai.db.DBHelper;
+import cn.boai.pojo.Order;
 import cn.boai.pojo.User;
+import cn.boai.util.UUIDHelp;
 
 public class UserDaoImpl implements UserDao{
 
@@ -17,7 +22,8 @@ public class UserDaoImpl implements UserDao{
 		String sql = "insert into user(user_id,user_name,user_password,user_sex,user_photo,user_time) values(?,?,?,?,?,?)";
 		PreparedStatement ps = null;
 		ps = conn.prepareStatement(sql);
-		ps.setString(1, user.getUser_id());
+		String id=UUIDHelp.GetUUID();
+		ps.setString(1, id);
 		ps.setString(2, user.getUser_name());
 		ps.setString(3, user.getUser_password());
 		ps.setString(4, user.getUser_sex());
@@ -30,7 +36,7 @@ public class UserDaoImpl implements UserDao{
 		ps.close();
 		return flag;
 	}
-
+	
 	@Override
 	public boolean updateUser(User user, Connection conn) throws Exception {
 		boolean flag = false;

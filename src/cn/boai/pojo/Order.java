@@ -18,6 +18,12 @@ public class Order implements Serializable{
 	public String getOrder_id() {
 		return order_id;
 	}
+	@Override
+	public String toString() {
+		return "Order [order_id=" + order_id + ", user_id=" + user_id + ", pro_id=" + pro_id + ", order_status="
+				+ order_status + ", order_time=" + order_time + ", order_pay=" + order_pay + ", order_total="
+				+ order_total + ", order_def=" + order_def + "]";
+	}
 	public void setOrder_id(String order_id) {
 		this.order_id = order_id;
 	}
