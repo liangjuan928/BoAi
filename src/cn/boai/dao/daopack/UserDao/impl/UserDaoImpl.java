@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import cn.boai.dao.daopack.UserDao.UserDao;
 import cn.boai.db.DBHelper;
-import cn.boai.pojo.Order;
+import cn.boai.pojo.Order1;
 import cn.boai.pojo.User;
 import cn.boai.util.UUIDHelp;
 
