@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cn.boai.web.from.ActionForm;
+import cn.boai.web.form.ActionForm;
+
 
 
 public class UserServlet extends HttpServlet{
