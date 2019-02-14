@@ -16,8 +16,6 @@ import cn.boai.pojo.Product;
 import cn.boai.util.UUIDHelp;
 
 public class OrderDaoImpl implements OrderDao {
-
-	
 	/**
 	 * 此方法sql语句有问题，插入失败(可能是外键对应的表没有)
 	 */
