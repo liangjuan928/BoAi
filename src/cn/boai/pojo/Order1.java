@@ -3,8 +3,8 @@ package cn.boai.pojo;
 import java.io.Serializable;
 import java.sql.Date;
 
-public class Order implements Serializable{
-	public Order() {
+public class Order1 implements Serializable{
+	public Order1() {
 	}
 
 	private String order_id;

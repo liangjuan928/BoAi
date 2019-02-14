@@ -12,7 +12,7 @@ import org.junit.Test;
 import cn.boai.dao.daopack.ArticleDao.ArticleDao;
 import cn.boai.db.DBHelper;
 import cn.boai.pojo.Article;
-import cn.boai.pojo.Order;
+import cn.boai.pojo.Order1;
 import cn.boai.pojo.Product;
 import cn.boai.util.UUIDHelp;
 
