@@ -2,6 +2,7 @@ package cn.boai.web.core;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -9,6 +10,7 @@ import java.util.Properties;
 import java.util.Set;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import cn.boai.web.form.ActionForm;
 
 
-
+@WebServlet("/user")
 public class CoreServlet extends HttpServlet{
  @Override
 protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -81,8 +83,34 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			ActionResult af = action.execute(req, resp,actionform);  //这里调用的实际是子类loginaction的execute方法
+			ActionResult actionResult = action.execute(req, resp,actionform);  //这里调用的实际是子类loginaction的execute方法
 //			af.forward(req, resp);
+	            ResultContent resultContent = actionResult.getResultContent();  
+	            String contextPath = req.getContextPath() + "/";  
+	            System.out.println("contextpath=============="+contextPath);
+	            String servletPath = req.getServletPath();
+//	            switch(actionResult.getResultType()) {  
+//	            case Redirect:  
+//	                resp.sendRedirect(contextPath + resultContent.getUrl());  
+//	                break;  
+//	            case Forward:  
+//	                req.getRequestDispatcher("/"+ resultContent.getUrl())  
+//	                        .forward(req, resp);  
+//	                break;  
+//	            case Ajax:  
+//	                PrintWriter pw = resp.getWriter();  
+//	                pw.println(resultContent.getJson());  
+//	                pw.close();  
+//	                break;  
+//	            case Chain:  
+//	                req.getRequestDispatcher(contextPath + resultContent.getUrl())  
+//	                        .forward(req, resp);  
+//	                break;  
+//	            case RedirectChain:  
+//	                resp.sendRedirect(contextPath + resultContent.getUrl());  
+//	                break;  
+//	            default:  
+//	            } 
 		}
 		@Override
 		public void init() throws ServletException {
