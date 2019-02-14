@@ -17,7 +17,7 @@ import cn.boai.web.form.ActionForm;
 
 
 
-public class UserServlet extends HttpServlet{
+public class CoreServlet extends HttpServlet{
  @Override
 protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	// 通过请求的名字找到对应的Action实例进行处理
