@@ -82,6 +82,7 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 	            switch(actionResult.getResultType()) {  
 	            //config.getProperty(resultContent.getUrl()) 获取配置文件中的路径，注意配置文件中填写全路径
 	            case Redirect:  
+	            	
 	                resp.sendRedirect(contextPath+config.getProperty(resultContent.getUrl()));  
 	                break;  
 	            case Forward:  
