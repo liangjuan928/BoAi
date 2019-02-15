@@ -23,13 +23,14 @@ public class AddArticleAction extends DispatcherAction {
 		AddArticleForm cf = (AddArticleForm) form;
 		boolean result = ls.addArticle(cf);
 		ActionResult ar = null;
-		ResultContent rc = new ResultContent("add_articl", result);
+		ResultContent rc = new ResultContent("add_articl_jsp", result);
 		if(result){
 			System.out.println("添加成功");
 		}else{
 			System.out.println("添加失败");
 		}
-		ar = new ActionResult(rc, ResultType.Redirect); // 转发到add_articl在属性文件中对应的jsp页面
+		ar = new ActionResult(rc, ResultType.Forward); // 转发到add_articl在属性文件中对应的jsp页面
+		System.out.println("rc的url+++++"+rc.getUrl());
 		return ar;
 	}
 }

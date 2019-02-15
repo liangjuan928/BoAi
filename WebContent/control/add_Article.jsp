@@ -47,6 +47,7 @@
      </li> 
   </ul>
   <div class="Button_operation btn_width">
+  <input type="hidden" name="param" value="addArticle"></input>
     <button class="btn button_btn bg-deep-blue" type="submit">保存并提交</button>
     <button class="btn button_btn bg-gray" type="button" onclick="getContent()">取消添加</button>
  </div>

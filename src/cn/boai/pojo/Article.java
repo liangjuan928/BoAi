@@ -13,6 +13,13 @@ public class Article implements Serializable{
 	private String article_body;
 	private String article_def;
 	private String article_describe;
+	private String article_type;
+	public String getArticle_type() {
+		return article_type;
+	}
+	public void setArticle_type(String article_type) {
+		this.article_type = article_type;
+	}
 	public String getArticle_describe() {
 		return article_describe;
 	}
