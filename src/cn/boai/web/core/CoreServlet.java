@@ -26,7 +26,6 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 
 			// 保证创建的Action实例不重复
 			Properties actionPool = (Properties) this.getServletContext().getAttribute("actionPool");
-
 			String uri = req.getRequestURI();
 			System.out.println("uri:"+uri);
 			int a = uri.lastIndexOf("/");
