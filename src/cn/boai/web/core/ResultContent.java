@@ -18,15 +18,8 @@ public class ResultContent {
 	    	this.url = url; 
 	        this.obj = obj;  
 	    }  
-	    public ResultContent(Object obj,AttrType attrType) {  
-	        this.obj = obj;  
-	        this.attrType=attrType;
-	    } 
-	    public ResultContent(String url,Object obj,AttrType attrType) {  
-	    	this.attrType=attrType;
-	    	this.url = url; 
-	        this.obj = obj;  
-	    }  
+	    
+	    
 	      
 	    public String getUrl() {  
 	        return url;  
@@ -36,7 +29,5 @@ public class ResultContent {
 	    	return new Gson().toJson(obj);
 	    }
 
-		public AttrType getAttrType() {
-			return attrType;
-		}  
+		 
 }
