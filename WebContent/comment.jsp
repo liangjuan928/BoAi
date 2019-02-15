@@ -174,9 +174,13 @@
                     <div class="form-group">
                        <h4 style="color:#db6d4c;">评价：</h4>
                           <input id="comm_title" name="comm_title" class="form-control required" type="text" placeholder="标题" maxlength="60" style="width: 600px;" onblur="check1()" onfocus="re1()"/><br/>
-                          <input type="radio" name="comm_type" value="good">好评
-                          <input type="radio" name="comm_type" value="normal">中评
-                          <input type="radio" name="comm_type" value="bad">差评
+                          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                          <input type="radio" name="comm_type" value="good" id="good"><label for="good"><img title="好评" src="res/static/img/good.png" style="width:40px;height:40px;display:inline-block;"></label>
+                          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                          <input type="radio" name="comm_type" value="normal" id="normal"><label for="normal"><img title="中评" src="res/static/img/normal.png" style="width:40px;height:40px;display:inline-block;"></label>
+                          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                          <input type="radio" name="comm_type" value="bad" id="bad"><label for="bad"><img title="差评" src="res/static/img/bad.png" style="width:40px;height:40px;display:inline-block;"></label>
+                          <br/>
                     	  <span style="color:red" id="aaa"></span>
                     </div>
                     <div class="form-group">

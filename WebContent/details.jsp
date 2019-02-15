@@ -127,7 +127,8 @@
           </div>
         </div>
         <div class="detail">
-          <h4>详情</h4>
+          <h4 style="display:inline-block;">详情</h4>
+          <h4 style="display:inline-block;">评论</h4>
           <div class="item">
             <img src="res/static/img/details_imgbig.jpg">
           </div>
