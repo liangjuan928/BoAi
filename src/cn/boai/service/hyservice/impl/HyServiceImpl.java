@@ -1,16 +1,35 @@
 package cn.boai.service.hyservice.impl;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.SQLException;
 
-import com.mysql.jdbc.Connection;
+import cn.boai.dao.daopack.UserDao.impl.UserDaoImpl;
+import cn.boai.db.DBHelper;
+import cn.boai.pojo.User;
+import cn.boai.service.hyservice.HyService;
 
-import cn.boai.dao.daopack.AddressDao.AddressDao;
-import cn.boai.pojo.Address;
+public class HyServiceImpl implements HyService{
+	private UserDaoImpl ud=new UserDaoImpl();
 
-public class HyServiceImpl {
+	@Override
+	public User queryUserById(String uid) {
+		Connection conn = DBHelper.getConnection();
+		User user = null;
+		try {
+			conn.setAutoCommit(false);
+			user = ud.selectUserById(uid, conn);
+			conn.commit();
+		} catch (Exception e) {
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}finally{
+			DBHelper.closeConnection(conn);
+		}
+		return user;
+	}
 
 	
 }
