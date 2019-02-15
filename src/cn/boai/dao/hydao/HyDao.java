@@ -7,4 +7,5 @@ import com.mysql.jdbc.Connection;
 import cn.boai.pojo.Address;
 
 public interface HyDao {
+	//nxbjksbck
 }
