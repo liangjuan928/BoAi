@@ -28,6 +28,7 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 			Properties actionPool = (Properties) this.getServletContext().getAttribute("actionPool");
 
 			String uri = req.getRequestURI();
+			System.out.println("uri:"+uri);
 			int a = uri.lastIndexOf("/");
 			int b = uri.lastIndexOf(".");
 			uri = uri.substring(a + 1, b); // 得到login.do 中的login

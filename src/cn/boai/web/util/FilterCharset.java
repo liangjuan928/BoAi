@@ -2,7 +2,6 @@ package cn.boai.web.util;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
@@ -97,17 +96,8 @@ class Myservlet extends HttpServletRequestWrapper{
 			}
 		}
 		return map;
-		
-		
-		
-		
-		
-		
-		
 	}
-	
-	
-	
-	
-	
 }
+
+
+
