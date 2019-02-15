@@ -55,12 +55,12 @@
     <script type="text/javascript">
 		function check1(){
 			if(document.getElementById("comm_title").value=="")
-				document.getElementById("aaa").innerHTML = "标题不能为空！";
+				document.getElementById("aaa").innerHTML = "评价不能为空！";
 		}
 		
 		function check2(){
 			if(document.getElementById("comm_content").value=="")
-				document.getElementById("bbb").innerHTML = "正文不能为空！";
+				document.getElementById("bbb").innerHTML = "评论内容不能为空！";
 		}
 		
 		function re1(){
@@ -72,23 +72,35 @@
 		}
 		
 		function sub(){
-			if(document.getElementById("aaa").innerHTML==""&&document.getElementById("bbb").innerHTML==""){
-				alert("评论成功！");
-				return true;
-			}
-			else{
-				document.getElementById("bbb").innerHTML = "评论失败！";
-				return false;
+			if(!(document.getElementById("good").checked||document.getElementById("normal").checked||document.getElementById("bad").checked)){
+				alert("评价不能为空!");
+			}else{
+				if(document.getElementById("aaa").innerHTML==""&&document.getElementById("bbb").innerHTML==""){
+					var form = document.getElementById("myForm");
+					form.action="comm.do";
+					form.method="post";
+					form.submit();
+					alert("评论成功！");
+					return true;
+				}
+				else{
+					document.getElementById("bbb").innerHTML = "评论失败！";
+					return false;
+				}
 			}
 		}
     </script>
 </head>
 <body>
 
+	<%session.setAttribute("user_id", "111"); %>
+	<%String userid=(String)session.getAttribute("user_id"); %>
+	<%session.setAttribute("pro_id", "123"); %>
+	<%String proid=(String)session.getAttribute("pro_id"); %>
 	
 	
 			<div class="topnews">
-		<h2><b>&emsp;已收到留言</b></h2>
+		<h2><b>&emsp;已收到评论</b></h2>
 		<br/>
 	</div>
 	<div id="show">
@@ -165,21 +177,20 @@
   	<br/>
   	<br/>
   	<div class="topnews">
-		<h2><b>&emsp;发布留言</b></h2>
+		<h2><b>&emsp;发布评论</b></h2>
 	</div>
 	<div class="form row" id="comm">
             <div class="form-horizontal">
-                <form action="comm.do" method="post" onsubmit="return sub()">
+                <form id="myform">
                 <div class="col-md-9">
                     <div class="form-group">
                        <h4 style="color:#db6d4c;">评价：</h4>
-                          <input id="comm_title" name="comm_title" class="form-control required" type="text" placeholder="标题" maxlength="60" style="width: 600px;" onblur="check1()" onfocus="re1()"/><br/>
                           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                          <input type="radio" name="comm_type" value="good" id="good"><label for="good"><img title="好评" src="res/static/img/good.png" style="width:40px;height:40px;display:inline-block;"></label>
+                          <input type="radio" name="comm_type" value="1" id="good"><label for="good"><img title="好评" src="res/static/img/good.png" style="width:40px;height:40px;display:inline-block;"></label>
                           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                          <input type="radio" name="comm_type" value="normal" id="normal"><label for="normal"><img title="中评" src="res/static/img/normal.png" style="width:40px;height:40px;display:inline-block;"></label>
+                          <input type="radio" name="comm_type" value="2" id="normal"><label for="normal"><img title="中评" src="res/static/img/normal.png" style="width:40px;height:40px;display:inline-block;"></label>
                           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                          <input type="radio" name="comm_type" value="bad" id="bad"><label for="bad"><img title="差评" src="res/static/img/bad.png" style="width:40px;height:40px;display:inline-block;"></label>
+                          <input type="radio" name="comm_type" value="3" id="bad"><label for="bad"><img title="差评" src="res/static/img/bad.png" style="width:40px;height:40px;display:inline-block;"></label>
                           <br/>
                     	  <span style="color:red" id="aaa"></span>
                     </div>
@@ -191,7 +202,10 @@
                     </div>
         
                     <div class="form-group col-md-offset-9">
-                        <button class="btn">发表</button><br/>
+                        <input type="hidden" name="param" value="addcomm"/>
+                        <input type="hidden" name="pro_id" value="<%=proid %>"/>
+                        <input type="hidden" name="user_id" value="<%=userid %>"/>
+                        <button class="btn" onclick="return sub()">发表</button><br/>
                         <span style="color:red" id="comm_msg"></span>
                     </div>
                 </div>
