@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class IndexFilter implements Filter {
+public class ArticleIndexFilter implements Filter {
 
 	@Override
 	public void destroy() {
@@ -23,7 +23,7 @@ public class IndexFilter implements Filter {
 			throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest)request;
 		HttpServletResponse resp = (HttpServletResponse)response;
-		req.getRequestDispatcher("showAllArticle.do").forward(req, resp);
+		req.getRequestDispatcher("showarticle.do").forward(req, resp);
 	}
 
 	@Override

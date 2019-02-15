@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,19 +65,22 @@
       <div class="info-list w1200">
         <div class="item-box layui-clear" id="list-cont">
         
-        
-        
-        
-          <div class="item">
+        <c:forEach items="${articllist}" var="art" >
+            <div class="item">
             <div class="img">
               <img src="res/static/img/new1.jpg" alt="">
             </div>
             <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
+              <h4>${art.article_title }</h4>
+              <p class="data">${art.article_time }</p>
+              <p class="info-cont">${art.article_describe }</p>
             </div>
           </div>
+        </c:forEach>
+        
+        
+        
+         
          
          
           

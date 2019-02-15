@@ -51,28 +51,31 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 			//------为了使得LoginAction更方便的取得客户端的属性值，使用LoginForm包装好login页面的数据----
 			String formname=config.getProperty(uri+"Form");
 			ActionForm actionform=null;
-			try {
-				//loginform需要不断的new出新实例，因为用户提交的数据可能每一次都不一样
-				System.out.println("formname==============="+formname);
-			   Class c=Class.forName(formname);
-			   actionform=(ActionForm)c.newInstance();
-			   
-				//现在从请求中拿到所有的值
-				Map<String,String[]> map=req.getParameterMap();
-				Set<Entry<String,String[]>> set=map.entrySet();
-				for (Entry<String, String[]> entry : set) {   //这里的key要和表单域的name以及loginform的属性名字保持相同
-					String key=entry.getKey();
-					String[] values=entry.getValue();
-					System.out.println(key+"====="+values[0]);
-					String methodname="set"+key.substring(0,1).toUpperCase()+key.substring(1);
-					System.out.println("拿到的set方法名"+methodname+"----------拿到的属性值"+entry.getValue()[0]);
-					Method method=c.getMethod(methodname,new Class[]{String.class});
-					method.invoke(actionform, entry.getValue());
+			if(formname!=null){
+			
+				try {
+					//loginform需要不断的new出新实例，因为用户提交的数据可能每一次都不一样
+					System.out.println("formname==============="+formname);
+				   Class c=Class.forName(formname);
+				   actionform=(ActionForm)c.newInstance();
+				   
+					//现在从请求中拿到所有的值
+					Map<String,String[]> map=req.getParameterMap();
+					Set<Entry<String,String[]>> set=map.entrySet();
+					for (Entry<String, String[]> entry : set) {   //这里的key要和表单域的name以及loginform的属性名字保持相同
+						String key=entry.getKey();
+						String[] values=entry.getValue();
+						System.out.println(key+"====="+values[0]);
+						String methodname="set"+key.substring(0,1).toUpperCase()+key.substring(1);
+						System.out.println("拿到的set方法名"+methodname+"----------拿到的属性值"+entry.getValue()[0]);
+						Method method=c.getMethod(methodname,new Class[]{String.class});
+						method.invoke(actionform, entry.getValue());
+					}
+					
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-				
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
 			ActionResult actionResult = action.execute(req, resp,actionform);  //这里调用的实际是子类的execute方法
 	            ResultContent resultContent = actionResult.getResultContent();  
