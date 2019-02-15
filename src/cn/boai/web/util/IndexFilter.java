@@ -23,7 +23,7 @@ public class IndexFilter implements Filter {
 			throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest)request;
 		HttpServletResponse resp = (HttpServletResponse)response;
-		req.getRequestDispatcher("user?oper=first").forward(req, resp);
+		req.getRequestDispatcher("showAllArticle.do").forward(req, resp);
 	}
 
 	@Override

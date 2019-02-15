@@ -2,6 +2,7 @@ package cn.boai.service.ljservice.impl;
 
 import java.sql.Connection;
 import java.util.Date;
+import java.util.List;
 
 import cn.boai.dao.daopack.ArticleDao.ArticleDao;
 import cn.boai.dao.daopack.ArticleDao.impl.ArticleDaoImpl;
@@ -32,6 +33,21 @@ public class LjServiceImpl implements LjService{
 			e.printStackTrace();
 		}
 		return result;
+	}
+
+	@Override
+	public List<Article> selectAllActicle() {
+		Connection conn=DBHelper.getConnection();
+		List<Article> list=null;
+		try {
+			list=ad.selectAllArticle(conn);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			DBHelper.closeConnection(conn);
+		}
+		return list;
 	}
       
 	

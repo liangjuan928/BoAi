@@ -47,8 +47,6 @@
       </div>
     </div>
   </div>
-
-
   <div class="content content-nav-base information-content">
     <div class="main-nav">
       <div class="inner-cont0">
@@ -65,6 +63,10 @@
     <div class="info-list-box">
       <div class="info-list w1200">
         <div class="item-box layui-clear" id="list-cont">
+        
+        
+        
+        
           <div class="item">
             <div class="img">
               <img src="res/static/img/new1.jpg" alt="">
@@ -75,156 +77,18 @@
               <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
             </div>
           </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new2.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new1.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new2.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new1.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new2.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new1.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new2.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new1.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new2.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new1.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new2.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new1.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new2.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new1.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="img">
-              <img src="res/static/img/new2.jpg" alt="">
-            </div>
-            <div class="text">
-              <h4>周岁内的宝宝消化不良拉肚子怎么办?</h4>
-              <p class="data">2016-12-24 16:33:26</p>
-              <p class="info-cont">宝宝在周岁之前体质相对较弱，特别是薄弱肠道，一不注意就会拉肚子;那么宝宝消化不良拉肚子</p>
-            </div>
-          </div>
+         
+         
+          
+          
+          
+         
+          
+         
+          
+          
+          
+          
         </div>
         <div id="demo0" style="text-align: center;"></div>
       </div>
