@@ -28,7 +28,7 @@
 <div class="margin" id="page_style">
 <div class="operation clearfix">
 <button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button>
-<span class="submenu"><a href="javascript:void(0)" name="add_Article.html" class="btn button_btn bg-deep-blue" title="添加文章"><i class="fa  fa-edit"></i>&nbsp;添加文章</a></span>
+<span class="submenu"><a href="javascript:void(0)" name="add_Article.jsp" class="btn button_btn bg-deep-blue" title="添加文章"><i class="fa  fa-edit"></i>&nbsp;添加文章</a></span>
    <div class="search  clearfix">
  <label class="label_name">商品搜索：</label><input name="" type="text"  class="form-control col-xs-6"/><button class="btn button_btn bg-deep-blue " onclick=""  type="button"><i class="fa  fa-search"></i>&nbsp;搜索</button>
 </div>

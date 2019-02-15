@@ -29,7 +29,7 @@
   <div class="Prompt"><b>提示：</b>本管理项目中的界面为静态单界面,可作为活动页,紧急通知等短期界面使用。</div>
   <div class="operation margin-sx">
 <button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button>
-<span class="submenu"><a href="javascript:void(0)" name="add_Singlepag.html" class="btn button_btn bg-deep-blue" title="添加单页"  onclick="add_columns()"><i class="fa  fa-edit"></i>&nbsp;添加单页</a></span>
+<span class="submenu"><a href="javascript:void(0)" name="add_Singlepag.jsp" class="btn button_btn bg-deep-blue" title="添加单页"  onclick="add_columns()"><i class="fa  fa-edit"></i>&nbsp;添加单页</a></span>
 </div>
   <div class="Single_page_list margin-sx">
     <ul>

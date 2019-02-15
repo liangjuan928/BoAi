@@ -16,9 +16,9 @@
 <script src="js/shopFrame.js" type="text/javascript"></script>
 <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/jquery.cookie.js"></script> 
-<title>大气通用购物商城后台管理系统网站模板全套下载_在线演示_电脑网站模板_前端模板_js代码</title>
-<meta name="keywords" content="大气,通用,购物商城,后台管理,管理系统,网站模板,全套下载" />
-<meta name="description" content="大气通用购物商城后台管理系统网站模板全套下载。" />
+<title>博爱母婴</title>
+<meta name="keywords" content="博爱母婴" />
+<meta name="description" content="博爱母婴" />
 </head>
 <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
@@ -69,23 +69,23 @@
                 </form>
      </div>     
     <dl class="nav nav-list" id="menu_list">
-     <dt class="shop_index nav_link " ><a href="javascript:void(0)" name="shop_index.html" class="iframeurl" title=""><i class="fa fa-home"></i><span class="menu-text">商城首页</span></a></dt>
+     <dt class="shop_index nav_link " ><a href="javascript:void(0)" name="shop_index.jsp" class="iframeurl" title=""><i class="fa fa-home"></i><span class="menu-text">商城首页</span></a></dt>
      <dd class="submenu" style="height:0px; border:0px;"></dd>
      <dt class="nav_link ">
      <a href="javascript:void(0)" class="dropdown-toggle title_nav"><i class="fa fa-desktop"></i><span class="menu-text"> 商品管理 </span><b class="arrow fa fa-angle-down"></b></a>
      </dt>
      <dd class="submenu">
        <ul>
-         <li class="home"><a href="javascript:void(0)" name="Products.html" title="产品类表" class="iframeurl"><i class="fa fa-angle-double-right"></i>产品管理</a></li>
+         <li class="home"><a href="javascript:void(0)" name="Products.jsp" title="产品类表" class="iframeurl"><i class="fa fa-angle-double-right"></i>产品管理</a></li>
         
          </ul>
          </dd>
   <dt class="nav_link"><a href="#" class="dropdown-toggle title_nav"><i class="fa fa-database"></i><span class="menu-text"> 订单管理 </span><b class="arrow fa fa-angle-down"></b></a></dt>
     <dd class="submenu">
      <ul>
-       <li class="home"><a href="javascript:void(0)" name="Order.html" title="订单类表" class="iframeurl"><i class="fa fa-angle-double-right"></i>订单类表</a></li>
+       <li class="home"><a href="javascript:void(0)" name="Order.jsp" title="订单类表" class="iframeurl"><i class="fa fa-angle-double-right"></i>订单类表</a></li>
       
-       <li class="home"><a href="javascript:void(0)" name="Order_Logistics.html" title="物流管理" class="iframeurl"><i class="fa fa-angle-double-right"></i>物流管理</a></li>
+       <li class="home"><a href="javascript:void(0)" name="Order_Logistics.jsp" title="物流管理" class="iframeurl"><i class="fa fa-angle-double-right"></i>物流管理</a></li>
        
        </ul>
       </dd>
@@ -96,24 +96,24 @@
         <dt class="nav_link"><a href="#" class="dropdown-toggle title_nav"><i class="fa fa-user"></i><span class="menu-text"> 会员管理 </span><b class="arrow fa fa-angle-down"></b></a></dt>
     <dd class="submenu">
      <ul>
-       <li class="home"><a href="javascript:void(0)" name="member_list.html" title="会员列表" class="iframeurl"><i class="fa fa-angle-double-right"></i>会员列表</a></li>
-       <li class="home"><a href="javascript:void(0)" name="Columns.html" title="等级管理" class="iframeurl"><i class="fa fa-angle-double-right"></i>等级管理</a></li>
-       <li class="home"><a href="javascript:void(0)" name="Category_Manage.html" title="会员记录" class="iframeurl"><i class="fa fa-angle-double-right"></i>会员记录</a></li>
+       <li class="home"><a href="javascript:void(0)" name="member_list.jsp" title="会员列表" class="iframeurl"><i class="fa fa-angle-double-right"></i>会员列表</a></li>
+       <li class="home"><a href="javascript:void(0)" name="Columns.jsp" title="等级管理" class="iframeurl"><i class="fa fa-angle-double-right"></i>等级管理</a></li>
+       <li class="home"><a href="javascript:void(0)" name="Category_Manage.jsp" title="会员记录" class="iframeurl"><i class="fa fa-angle-double-right"></i>会员记录</a></li>
        </ul>
       </dd>
      
        <dt class="nav_link"><a href="#" class="dropdown-toggle title_nav"><i class="fa fa-file-text-o"></i><span class="menu-text"> 文章管理 </span><b class="arrow fa fa-angle-down"></b></a></dt>
     <dd class="submenu">
      <ul>
-       <li class="home"><a href="javascript:void(0)" name="Article_list.html" title="文章列表" class="iframeurl"><i class="fa fa-angle-double-rightt"></i>文章列表</a></li>
+       <li class="home"><a href="javascript:void(0)" name="Article_list.jsp" title="文章列表" class="iframeurl"><i class="fa fa-angle-double-rightt"></i>文章列表</a></li>
        </ul>
       </dd>
        <dt class="nav_link"><a href="#" class="dropdown-toggle title_nav"><i class="fa fa-users"></i><span class="menu-text">管理员管理 </span><b class="arrow fa fa-angle-down"></b></a></dt>
     <dd class="submenu">
      <ul>
-       <li class="home"><a href="javascript:void(0)" name="add_administrator.html" title="添加管理员" class="iframeurl"><i class="fa fa-angle-double-right"></i>添加管理员</a></li>
-       <li class="home"><a href="javascript:void(0)" name="admin_Competence.html" title="权限设置" class="iframeurl"><i class="fa fa-angle-double-right"></i>权限设置</a></li>
-       <li class="home"><a href="javascript:void(0)" name="administrator_list.html" title="管理员列表" class="iframeurl"><i class="fa fa-angle-double-right"></i>管理员列表</a></li>
+       <li class="home"><a href="javascript:void(0)" name="add_administrator.jsp" title="添加管理员" class="iframeurl"><i class="fa fa-angle-double-right"></i>添加管理员</a></li>
+       <li class="home"><a href="javascript:void(0)" name="admin_Competence.jsp" title="权限设置" class="iframeurl"><i class="fa fa-angle-double-right"></i>权限设置</a></li>
+       <li class="home"><a href="javascript:void(0)" name="administrator_list.jsp" title="管理员列表" class="iframeurl"><i class="fa fa-angle-double-right"></i>管理员列表</a></li>
        <li class="home"><a href="javascript:void(0)" name="Personal_info.htm" title="个人信息" class="iframeurl"><i class="fa fa-angle-double-right"></i>个人信息</a></li>
        </ul>
       </dd>
@@ -129,7 +129,7 @@
        <a id="js-tabNav-prev" class="radius btn-default left_roll" href="javascript:;"><i class="fa fa-backward"></i></a>
        <div class="breadcrumb_style clearfix">
 	  <ul class="breadcrumb clearfix" id="min_title_list">
-        <li class="active home"><span title="我的桌面" data-href="index.html"><i class="fa fa-home home-icon"></i>首页</span></li>
+        <li class="active home"><span title="我的桌面" data-href="index.jsp"><i class="fa fa-home home-icon"></i>首页</span></li>
       </ul>
       </div>
        <a id="js-tabNav-next" class="radius btn-default right_roll" href="javascript:;"><i class="fa fa-forward"></i></a>
@@ -149,7 +149,7 @@
   <!--具体内容-->  
   <div id="iframe_box" class="iframe_content">
   <div class="show_iframe" id="show_iframe">
-       <iframe scrolling="yes" class="simei_iframe" frameborder="0" src="shop_index.html" name="iframepage" data-href="shop_index.html"></iframe>
+       <iframe scrolling="yes" class="simei_iframe" frameborder="0" src="shop_index.jsp" name="iframepage" data-href="shop_index.jsp"></iframe>
        </div>
       </div>
   </div>
@@ -193,14 +193,14 @@
 	str+=weekday[d.getDay()-1]; 
     return str; 
 } 
-setInterval(function(){$('#time').html(currentTime)},1000); 
+setInterval(function(){$('#time').jsp(currentTime)},1000); 
 $('#Exit_system').on('click', function(){
       layer.confirm('是否确定退出系统？', {
      btn: ['是','否'] ,//按钮
 	 icon:2,
     }, 
 	function(){
-	  location.href="login.html";
+	  location.href="login.jsp";
         
     });
 });

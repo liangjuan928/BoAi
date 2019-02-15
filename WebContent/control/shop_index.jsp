@@ -126,9 +126,9 @@
   </div>
   <div class="operating_style Quick_operation" >
   <ul>
-   <li class="submenu"><a href="javascript:void(0)" name="add_product.html" class="btn" title="添加产品"><i class="fa  fa-edit"></i>&nbsp;添加产品</a></li> 
+   <li class="submenu"><a href="javascript:void(0)" name="add_product.jsp" class="btn" title="添加产品"><i class="fa  fa-edit"></i>&nbsp;添加产品</a></li> 
    
-   <li class="submenu"><a href="javascript:void(0)" name="add_Article.html" class="btn" title="添加文章"><i class="fa  fa-edit"></i>&nbsp;添加文章</a></li>
+   <li class="submenu"><a href="javascript:void(0)" name="add_Article.jsp" class="btn" title="添加文章"><i class="fa  fa-edit"></i>&nbsp;添加文章</a></li>
   
   </ul>  
   </div>

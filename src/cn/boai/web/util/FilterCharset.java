@@ -1,4 +1,4 @@
-package cn.boai.web.until;
+package cn.boai.web.util;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -24,15 +24,15 @@ public class FilterCharset implements Filter{
 		HttpServletRequest req=(HttpServletRequest )request;
 		HttpServletResponse resp=(HttpServletResponse )response;
 	
-		 String method=req.getMethod();  //»ñÈ¡´«ËÍ·½Ê½
+		 String method=req.getMethod();  //ï¿½ï¿½È¡ï¿½ï¿½ï¿½Í·ï¿½Ê½
 		   if("post".equalsIgnoreCase(method)){
 			   req.setCharacterEncoding("utf-8");
 		   }
 		   if ("get".equalsIgnoreCase(method)){
-			   //´´½¨request×°ÊÎÊµÏÖÀà  
+			   //ï¿½ï¿½ï¿½ï¿½request×°ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½  
 			   
 			  req=new Myservlet(req);
-//			 ËùÓÐ²ÎÊýÐÅÏ¢
+//			 ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 //				Map map = req.getParameterMap();
 //				Collection coll = map.values();
 //				Iterator it = coll.iterator();
@@ -40,14 +40,14 @@ public class FilterCharset implements Filter{
 //					String[] strs = (String[])it.next();
 //					for(int i=0;i<strs.length;i++){
 //						strs[i] = new String(strs[i].getBytes("ISO8859-1"),"UTF-8");
-//						 System.out.println("------------£º"+strs[i]);
+//						 System.out.println("------------ï¿½ï¿½"+strs[i]);
 //					}
 //				}
 //		   }
 		   }
 //		   response.setContentType("text/html;charset=utf-8");
 		   response.setCharacterEncoding("utf-8");
-           chain.doFilter(req, resp); //´«µÝ¸øÏÂÒ»¸ö¹ýÂËÆ÷
+           chain.doFilter(req, resp); //ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	@Override
@@ -68,9 +68,9 @@ class Myservlet extends HttpServletRequestWrapper{
 		String valueLast=null;
 		try {
 			/*
-			 * ÅÐ¶ÏvalueÊÇ·ñÊÇnull£¬
-			 * Èç¹ûÊÇ»ánull£¬ÄÇÃ´¾Í¸øvalueLast¸³Öµnull£¬
-			 * Èç¹û²»ÊÇ£¬¾Í½«valueµÄÄÚÈÝÓÃISO-8859-1½âÂë£¬È»ºóÓÃUTF-8ÔÚ±àÂëºó·µ»ØÒ»¸ö×Ö·û´®¸øvalueLast
+			 * ï¿½Ð¶ï¿½valueï¿½Ç·ï¿½ï¿½ï¿½nullï¿½ï¿½
+			 * ï¿½ï¿½ï¿½ï¿½Ç»ï¿½nullï¿½ï¿½ï¿½ï¿½Ã´ï¿½Í¸ï¿½valueLastï¿½ï¿½Öµnullï¿½ï¿½
+			 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½ï¿½Í½ï¿½valueï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ISO-8859-1ï¿½ï¿½ï¿½ë£¬È»ï¿½ï¿½ï¿½ï¿½UTF-8ï¿½Ú±ï¿½ï¿½ï¿½ó·µ»ï¿½Ò»ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½valueLast
 			 */
 			valueLast = value==null?null:new String(value.getBytes("ISO-8859-1"),"utf-8");
 		} catch (UnsupportedEncodingException e) {

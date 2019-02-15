@@ -26,7 +26,7 @@
 <div class="margin Competence_style" id="page_style">
    <div class="operation clearfix">
 <button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button>
-<span class="submenu"><a href="add_Competence.html"  class="btn button_btn bg-deep-blue" title="添加权限"><i class="fa  fa-edit"></i>&nbsp;添加权限</a></span>
+<span class="submenu"><a href="add_Competence.jsp"  class="btn button_btn bg-deep-blue" title="添加权限"><i class="fa  fa-edit"></i>&nbsp;添加权限</a></span>
    <div class="search  clearfix">
    <input name="" type="text"  class="form-control col-xs-8"/><button class="btn button_btn bg-deep-blue " onclick=""  type="button"><i class="fa  fa-search"></i>&nbsp;搜索</button>
 </div>

@@ -23,41 +23,35 @@
 <body>
 <div class="margin" id="page_style">
   <div class="add_style">
+  <form action="add_articl.do">
     <ul>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>标题名称：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text"  class="col-xs-6"/></div>  </li>
-  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text" class="col-xs-4"/></div>
+  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>标题名称：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="title" type="text"  class="col-xs-6"/></div>  </li>
+  <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="describe" type="text" class="col-xs-4"/></div>
   </li>
-     <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>关&nbsp;键&nbsp;字：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="" type="text" class="col-xs-4"/><em class="Prompt"> 请用","分隔关键字</em></div>
-     </li>
+
+    
      <li class="clearfix">
    <label class="label_name col-xs-1"><i>*</i>所属分类：&nbsp;&nbsp;</label>
    <div class="Add_content col-xs-11">
-   <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">帮助中心</span></label></span>
-   <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">购物指南</span></label></span>
-   <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">支付方式</span></label></span>
-   <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">售后服务</span></label></span>
-   <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">特色服务</span></label></span>
-   <span class="classification_name l_f"><label ><input type="radio" name="form-field-radio" class="ace"><span class="lbl">公司动态</span></label></span>
+   <span class="classification_name l_f"><label ><input type="radio" name="type" class="ace" value="1"><span class="lbl">新生父母必读</span></label></span>
+   <span class="classification_name l_f"><label ><input type="radio" name="type" class="ace" value="2"><span class="lbl">笑话集</span></label></span>
+   <span class="classification_name l_f"><label ><input type="radio" name="type" class="ace" value="3"><span class="lbl">好医术</span></label></span>
+   <span class="classification_name l_f"><label ><input type="radio" name="type" class="ace" value="4"><span class="lbl">服饰搭配</span></label></span>
+   <span class="classification_name l_f"><label ><input type="radio" name="type" class="ace" value="5"><span class="lbl">家教微刊</span></label></span>
    <span class="relative l_f">
-   <button  type="button" onclick="add_category()" class="btn bg-deep-blue operation_btn margin-left">添加分类</button>
-   <div class="add_category_style">
-     <p class="clearfix">
-     <input name="" type="text"  class="l_f" style="width:260px;"/><button class="btn button_btn bg-deep-blue l_f" id="add_category" type="button">添加</button>
-     </p>
-     <p class="Prompt"><em>该分类最多添加10个</em></p>
-   </div>
    </span>
    </div> 
    </li>
       <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>内容介绍：&nbsp;&nbsp;</label>
-     <div class="Add_content col-xs-11"><script id="editor" type="text/plain" style="width:100%;height:500px;"></script></div>
+     <div class="Add_content col-xs-11"><script id="editor" type="text/plain" style="width:100%;height:300px;"></script></div>
      </li> 
   </ul>
   <div class="Button_operation btn_width">
     <button class="btn button_btn bg-deep-blue" type="button">保存并提交</button>
     <button class="btn button_btn bg-orange" type="button">保存草稿</button>
-    <button class="btn button_btn bg-gray" type="button">取消添加</button>
+    <button class="btn button_btn bg-gray" type="button" onclick="getContent()">取消添加</button>
  </div>
+ </form>
   </div>
 </div>
 </body>
@@ -69,7 +63,16 @@
 <script>
 $(function(){
  var ue = UE.getEditor('editor');
+ 
 });
+function getContent() {
+    var arr = [];
+    arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+    arr.push("内容为：");
+    arr.push(UE.getEditor('editor').getContent());
+    alert(arr.join("\n"));
+}
+
  function add_category(){$(".add_category_style").toggle();}
  /*******滚动条*******/
 $("body").niceScroll({  

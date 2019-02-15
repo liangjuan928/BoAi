@@ -77,7 +77,7 @@ $('#login_btn').on('click', function(){
                title: '提示框',				
 			   icon:1,		
 			  });
-	          location.href="shops_index.html";
+	          location.href="shops_index.jsp";
 			   layer.close(index);	
 		  }		  		     								
 	});

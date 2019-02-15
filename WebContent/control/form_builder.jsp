@@ -258,11 +258,11 @@ $(document).ready(function () {
 		$.each(["draggable", "droppable", "sortable", "dropped","ui-sortable", "ui-draggable", "ui-droppable", "form-body"], function (i, c) {
 			$copy.find("." + c).removeClass(c).removeAttr("style");
 		})
-		var html = html_beautify($copy.html());
+		var html = html_beautify($copy.jsp());
 		$copy.remove();
 		$modal = get_modal(html).modal("show");
 		$modal.find(".btn").remove();
-		$modal.find(".modal-title").html("复制HTML代码");
+		$modal.find(".modal-title").jsp("复制HTML代码");
 		$modal.find(":input:first").select().focus();
 		return false;
 	})
@@ -341,14 +341,14 @@ $(document).on("click", ".edit-link", function (ev) {
 	var $el = $(this).parent().parent();
 	var $el_copy = $el.clone();
 	var $edit_btn = $el_copy.find(".edit-link").parent().remove();
-	var $modal = get_modal(html_beautify($el_copy.html())).modal("show");
+	var $modal = get_modal(html_beautify($el_copy.jsp())).modal("show");
 	$modal.find(":input:first").focus();
 	$modal.find(".button_btn").click(function (ev2) {
 		var html = $modal.find("textarea").val();
 		if (!html) {
 			$el.remove();
 		} else {
-			$el.html(html);
+			$el.jsp(html);
 			$edit_btn.appendTo($el);
 		}
 		$modal.modal("hide");

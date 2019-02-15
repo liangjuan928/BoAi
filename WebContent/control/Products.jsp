@@ -28,7 +28,7 @@
 <div class="margin" id="page_style">
 <div class="operation clearfix">
 <button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button>
-<span class="submenu"><a href="javascript:void(0)" name="add_product.html" class="btn button_btn bg-deep-blue" title="添加产品"><i class="fa  fa-edit"></i>&nbsp;添加产品</a></span>
+<span class="submenu"><a href="javascript:void(0)" name="add_product.jsp" class="btn button_btn bg-deep-blue" title="添加产品"><i class="fa  fa-edit"></i>&nbsp;添加产品</a></span>
 <div class="search  clearfix">
  <label class="label_name">商品搜索：</label><input name="" type="text"  class="form-control col-xs-6"/><button class="btn button_btn bg-deep-blue " onclick=""  type="button"><i class="fa  fa-search"></i>&nbsp;搜索</button>
 
@@ -200,7 +200,7 @@ function picture_del(obj,id){
 function picture_stop(obj,id){
 	layer.confirm('确认要下架吗？',function(index){
 		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn bg-gray operation_btn" onClick="picture_start(this,id)" href="javascript:;" title="上架">上架</a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已停用</span>');
+		$(obj).parents("tr").find(".td-status").jsp('<span class="label label-defaunt radius">已停用</span>');
 		$(obj).remove();
 		layer.msg('已下架!',{icon: 5,time:1000});
 	});
@@ -210,7 +210,7 @@ function picture_stop(obj,id){
 function picture_start(obj,id){
 	layer.confirm('确认要上架吗？',function(index){
 		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn bg-green operation_btn" onClick="picture_stop(this,id)" href="javascript:;" title="下架">下架</a>');
-		$(obj).parents("tr").find(".radius").html('<span class="label label-success radius">已启用</span>');
+		$(obj).parents("tr").find(".radius").jsp('<span class="label label-success radius">已启用</span>');
 		$(obj).remove();
 		layer.msg('已上架!',{icon: 6,time:1000});
 	});

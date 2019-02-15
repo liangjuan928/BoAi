@@ -218,7 +218,7 @@ $("#save_info").click(function(){
 				   phone:$("#phone").val()
 				   },
 					function(data){
-				      $("#text_name").html(data)
+				      $("#text_name").jsp(data)
                        console.log(data.time);
 				  }, "text")*/
 				  
@@ -235,7 +235,7 @@ $("#save_info").click(function(){
 						  str+="性别:"+json.sex+"<br />";
 						  str+="工作:"+json.mailbox+"<br />";
 						  str+="追加测试:"+json.phone;						  
-						  $("#text_name").html(str);				  					  				  
+						  $("#text_name").jsp(str);				  					  				  
 					 }
 			   layer.alert('修改成功！',{
                title: '提示框',				

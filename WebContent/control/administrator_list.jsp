@@ -26,7 +26,7 @@
 <div class="margin Competence_style" id="page_style">
     <div class="operation clearfix">
 <button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button>
-<a href="add_administrator.html"  class="btn button_btn bg-deep-blue" title="添加管理员"><i class="fa  fa-edit"></i>&nbsp;添加管理员</a>
+<a href="add_administrator.jsp"  class="btn button_btn bg-deep-blue" title="添加管理员"><i class="fa  fa-edit"></i>&nbsp;添加管理员</a>
   <select class="select Competence_sort" name="admin-role" size="1" id="Competence_sort">
 					<option value="0">--选择分类--</option>
 					<option value="1">超级管理员</option>
@@ -132,7 +132,7 @@ $("body").niceScroll({
 function Competence_close(obj,id){
 	layer.confirm('确认要停用吗？',function(index){
 		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn button_btn btn-gray" onClick="Competence_start(this,id)" href="javascript:;" title="启用">启用</a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-success label-sm">已停用</span>');
+		$(obj).parents("tr").find(".td-status").jsp('<span class="label label-success label-sm">已停用</span>');
 		$(obj).remove();
 		layer.msg('已停用!',{icon: 5,time:1000});
 	});
@@ -142,7 +142,7 @@ function Competence_close(obj,id){
 function Competence_start(obj,id){
 	layer.confirm('确认要启用吗？',function(index){
 		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn button_btn  btn-Dark-success" onClick="Competence_close(this,id)" href="javascript:;" title="停用">停用</a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-success label-sm">已启用</span>');
+		$(obj).parents("tr").find(".td-status").jsp('<span class="label label-success label-sm">已启用</span>');
 		$(obj).remove();
 		layer.msg('已启用!',{icon: 6,time:1000});
 	});
