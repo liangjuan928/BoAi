@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 import cn.boai.web.form.ActionForm;
 
 
-@WebServlet("/user")
 public class CoreServlet extends HttpServlet{
  @Override
 protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -65,14 +64,6 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 					String key=entry.getKey();
 					String[] values=entry.getValue();
 					System.out.println(key+"====="+values[0]);
-					
-//					Field fileclass=c.getField(key);  //拿到属性对象的类型    (因为c是LoginForm的实例，所以不能找到父类的param属性)
-					
-//					Field file=c.getDeclaredField(key);         //使用getDeclaredField()可以拿到父类的属性
-//					file.setAccessible(true);                   //    设置访问权限  （这样可以获得私有属性）
-//					System.out.println("fileclass"+file);
-					
-					
 					String methodname="set"+key.substring(0,1).toUpperCase()+key.substring(1);
 					System.out.println("拿到的set方法名"+methodname+"----------拿到的属性值"+entry.getValue()[0]);
 					Method method=c.getMethod(methodname,new Class[]{String.class});
@@ -83,34 +74,36 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			ActionResult actionResult = action.execute(req, resp,actionform);  //这里调用的实际是子类loginaction的execute方法
-//			af.forward(req, resp);
+			ActionResult actionResult = action.execute(req, resp,actionform);  //这里调用的实际是子类的execute方法
 	            ResultContent resultContent = actionResult.getResultContent();  
+	         
 	            String contextPath = req.getContextPath() + "/";  
 	            System.out.println("contextpath=============="+contextPath);
 	            String servletPath = req.getServletPath();
-//	            switch(actionResult.getResultType()) {  
-//	            case Redirect:  
-//	                resp.sendRedirect(contextPath + resultContent.getUrl());  
-//	                break;  
-//	            case Forward:  
-//	                req.getRequestDispatcher("/"+ resultContent.getUrl())  
-//	                        .forward(req, resp);  
-//	                break;  
-//	            case Ajax:  
-//	                PrintWriter pw = resp.getWriter();  
-//	                pw.println(resultContent.getJson());  
-//	                pw.close();  
-//	                break;  
-//	            case Chain:  
-//	                req.getRequestDispatcher(contextPath + resultContent.getUrl())  
-//	                        .forward(req, resp);  
-//	                break;  
-//	            case RedirectChain:  
-//	                resp.sendRedirect(contextPath + resultContent.getUrl());  
-//	                break;  
-//	            default:  
-//	            } 
+	            
+	            switch(actionResult.getResultType()) {  
+	            //config.getProperty(resultContent.getUrl()) 获取配置文件中的路径，注意配置文件中填写全路径
+	            case Redirect:  
+	                resp.sendRedirect(config.getProperty(resultContent.getUrl()));  
+	                break;  
+	            case Forward:  
+	                req.getRequestDispatcher(config.getProperty(resultContent.getUrl()))  
+	                        .forward(req, resp);  
+	                break;  
+	            case Ajax:  
+	                PrintWriter pw = resp.getWriter();  
+	                pw.println(resultContent.getJson());  
+	                pw.close();  
+	                break;  
+	            case Chain:  
+	                req.getRequestDispatcher(config.getProperty(resultContent.getUrl()))  
+	                        .forward(req, resp);  
+	                break;  
+	            case RedirectChain:  
+	                resp.sendRedirect(config.getProperty(resultContent.getUrl()));  
+	                break;  
+	            default:  
+	            } 
 		}
 		@Override
 		public void init() throws ServletException {

@@ -2,6 +2,10 @@ package cn.boai.web.util;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Method;
+import java.util.Map;
+import java.util.Set;
+import java.util.Map.Entry;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -29,7 +33,6 @@ public class FilterCharset implements Filter{
 			   req.setCharacterEncoding("utf-8");
 		   }
 		   if ("get".equalsIgnoreCase(method)){
-			   //����requestװ��ʵ����  
 			   
 			  req=new Myservlet(req);
 //			 ���в�����Ϣ
@@ -46,8 +49,9 @@ public class FilterCharset implements Filter{
 //		   }
 		   }
 //		   response.setContentType("text/html;charset=utf-8");
+		   System.out.println("进入字符转码过滤器");
 		   response.setCharacterEncoding("utf-8");
-           chain.doFilter(req, resp); //���ݸ���һ��������
+           chain.doFilter(req, resp);
 	}
 
 	@Override
@@ -67,17 +71,39 @@ class Myservlet extends HttpServletRequestWrapper{
 		String value=super.getParameter(name);
 		String valueLast=null;
 		try {
-			/*
-			 * �ж�value�Ƿ���null��
-			 * ����ǻ�null����ô�͸�valueLast��ֵnull��
-			 * ������ǣ��ͽ�value��������ISO-8859-1���룬Ȼ����UTF-8�ڱ���󷵻�һ���ַ�����valueLast
-			 */
+			
 			valueLast = value==null?null:new String(value.getBytes("ISO-8859-1"),"utf-8");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-
 		return valueLast;
+	}
+	//重写请求的getParameterMap方法
+	@Override
+	public Map<String, String[]> getParameterMap() {
+		Map<String,String[]> map=super.getParameterMap();
+		Set<Entry<String,String[]>> set=map.entrySet();
+		String valueLast=null;
+		
+		for (Entry<String, String[]> entry : set) {   
+			String key=entry.getKey();
+			String[] values=entry.getValue();
+			for (int i = 0; i < values.length; i++) {
+				try {
+					values[i]=values[i]==null?null:new String(values[i].getBytes("ISO-8859-1"),"utf-8");
+				} catch (UnsupportedEncodingException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return map;
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 	

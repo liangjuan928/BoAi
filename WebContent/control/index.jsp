@@ -106,6 +106,7 @@
     <dd class="submenu">
      <ul>
        <li class="home"><a href="javascript:void(0)" name="Article_list.jsp" title="文章列表" class="iframeurl"><i class="fa fa-angle-double-rightt"></i>文章列表</a></li>
+       <li class="home"><a href="javascript:void(0)" name="add_Article.jsp" title="添加文章" class="iframeurl"><i class="fa fa-angle-double-rightt"></i>添加文章</a></li>
        </ul>
       </dd>
        <dt class="nav_link"><a href="#" class="dropdown-toggle title_nav"><i class="fa fa-users"></i><span class="menu-text">管理员管理 </span><b class="arrow fa fa-angle-down"></b></a></dt>

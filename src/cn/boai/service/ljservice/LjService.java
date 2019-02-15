@@ -5,6 +5,8 @@ import java.util.List;
 import com.mysql.jdbc.Connection;
 
 import cn.boai.pojo.Address;
+import cn.boai.web.form.ljform.AddArticleForm;
 
 public interface LjService {
+	public boolean addArticle(AddArticleForm form);
 }

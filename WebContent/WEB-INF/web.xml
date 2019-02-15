@@ -24,7 +24,7 @@
   
    <servlet>
   	<servlet-name>user</servlet-name>
-  	<servlet-class>web.core.UserServlet</servlet-class>
+  	<servlet-class>cn.boai.web.core.CoreServlet</servlet-class>
   	<init-param>
   		<param-name>configLocation</param-name>
   		<param-value>/WEB-INF/config.properties</param-value>

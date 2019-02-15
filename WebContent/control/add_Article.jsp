@@ -23,7 +23,7 @@
 <body>
 <div class="margin" id="page_style">
   <div class="add_style">
-  <form action="add_articl.do">
+  <form action="add_articl.do" >
     <ul>
   <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>标题名称：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="title" type="text"  class="col-xs-6"/></div>  </li>
   <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="describe" type="text" class="col-xs-4"/></div>
@@ -43,12 +43,11 @@
    </div> 
    </li>
       <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>内容介绍：&nbsp;&nbsp;</label>
-     <div class="Add_content col-xs-11"><script id="editor" type="text/plain" style="width:100%;height:300px;"></script></div>
+     <div class="Add_content col-xs-11"><script id="editor" type="text/plain" style="width:100%;height:300px;" name="conent"></script></div>
      </li> 
   </ul>
   <div class="Button_operation btn_width">
-    <button class="btn button_btn bg-deep-blue" type="button">保存并提交</button>
-    <button class="btn button_btn bg-orange" type="button">保存草稿</button>
+    <button class="btn button_btn bg-deep-blue" type="submit">保存并提交</button>
     <button class="btn button_btn bg-gray" type="button" onclick="getContent()">取消添加</button>
  </div>
  </form>

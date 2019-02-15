@@ -12,6 +12,13 @@ public class Article implements Serializable{
 	private Date article_time;
 	private String article_body;
 	private String article_def;
+	private String article_describe;
+	public String getArticle_describe() {
+		return article_describe;
+	}
+	public void setArticle_describe(String article_describe) {
+		this.article_describe = article_describe;
+	}
 	public Integer getArticle_id() {
 		return article_id;
 	}

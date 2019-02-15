@@ -14,6 +14,10 @@ public class ResultContent {
 	    public ResultContent(Object obj) {  
 	        this.obj = obj;  
 	    }  
+	    public ResultContent(String url,Object obj) {  
+	    	this.url = url; 
+	        this.obj = obj;  
+	    }  
 	      
 	    public String getUrl() {  
 	        return url;  
