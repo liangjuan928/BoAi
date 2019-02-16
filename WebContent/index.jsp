@@ -1,3 +1,6 @@
+<%@page import="cn.boai.pojo.User"%>
+<%@page import="cn.boai.service.hyservice.impl.HyServiceImpl"%>
+<%@page import="cn.boai.service.hyservice.HyService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +12,71 @@
   <script type="text/javascript" src="res/layui/layui.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <script type="text/javascript">
+  		var xmlHttp;
+		function createXmlHttp(){
+			if(window.XMLHttpRequest){//是火狐内核的
+				xmlHttp = new XMLHttpRequest();
+			}else{//IE内核
+				try{
+					xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+				}catch(e){
+					xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+			} 
+		}
+  	    function show(id){
+			//将id使用ajax传入后台，查出一个user的信息（String）
+			if(!xmlHttp){
+				createXmlHttp();
+			}
+			id = encodeURI(encodeURI(id));
+			xmlHttp.open("GET","moudiv.do?divid="+id,true);
+			xmlHttp.onreadystatechange=callback2;
+			xmlHttp.send();
+		}
+		var result;
+		function callback2(){
+			if(xmlHttp.readyState==4){
+				if(xmlHttp.status==200){
+					result= xmlHttp.responseText;//String的json
+					result = result.trim();
+					console.log(result+"----------------");
+				}
+			}
+		}
+		
+		var div;
+		function showPosition(){
+		    console.log(result+"=======");
+			if(div){
+				document.body.removeChild(div);
+			}
+			div = document.createElement("div");
+			div.style.position = "absolute";
+			div.style.top=event.y+5;
+			div.style.left=event.x+5;
+			div.style.width="11px";
+			div.style.height="11px";
+			div.style.background="blue";
+			div.innerHTML=result;
+			document.body.appendChild(div);
+		}
+		
+		function removeDiv(){
+			if(div){
+				document.body.removeChild(div);
+			}
+		} 
+		
+  </script>
 </head>
+
+<% 
+	String divid="1";
+	pageContext.setAttribute("divid", divid);
+ %>
+
 <body id="list-cont">
   <div class="site-nav-bg">
     <div class="site-nav w1200">
@@ -18,6 +85,12 @@
         <a href="#">首页 </a>
       </p>
       <div class="sn-quick-menu">
+        <form id="mForm">
+        <div id="${divid}" onmouseenter="show('${divid}')" 
+    					onmousemove="showPosition()" onmouseout="removeDiv()">
+    		 mousediv &nbsp;&nbsp;&nbsp;
+    	</div>
+    	</form>
         <div class="login"><a href="login.jsp">登录</a></div>
         <div class="sp-cart"><a href="shopcart.jsp">购物车</a><span>2</span></div>
       </div>
