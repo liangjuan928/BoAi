@@ -43,7 +43,6 @@
 	  	var target=document.querySelector(".sn-quick-menu");
 		//1. 克隆一个当前元素
 		var _gd = addcart.cloneNode(true);
-		_gd.removeChild(i);
 
 		//2. 设置透明度 style.opacity=0.5
 		_gd.style.opacity=0.5;
@@ -79,9 +78,11 @@
 			_gd.style.height = cH+"px";
 			
 			//6. 判断克隆元素的offsetLeft和offsetTop是否等于目标的offsetLeft和offsetTop
-			if(_gd.offsetLeft===target.offsetLeft&&_gd.offsetTop===target.offsetTop){
+			if(_gd.offsetTop===target.offsetTop){
 			     console.log(888);
-			     _gd.parentNode.removeChild(_gd);
+			     //_gd.parentNode.removeChild(_gd);
+			     //addcart.parentNode.removeChild(_gd);
+			     _gd.remove();
 			}
 		},30);
   	}
