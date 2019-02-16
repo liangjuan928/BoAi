@@ -25,7 +25,20 @@ public class ShowArticleAction implements Action  {
 	@Override
 	public ActionResult execute(HttpServletRequest request, HttpServletResponse reponse, ActionForm form)
 			throws ServletException, IOException {
-		List<Article> list=ls.selectAllActicle();
+		String strpage=request.getParameter("page");
+		if(strpage==null){  //如果是第一次加载就默认在第一页
+			strpage="1";
+		}
+		int page=Integer.parseInt(strpage);
+		int maxpagenum=ls.getArticleMaxPageNum(6);
+		if(page==-1||(page>maxpagenum)){   
+			page=maxpagenum;
+		}
+		if(page<1){
+			page=1;
+		}
+		List< Article> list=ls.SplitArticleList(page, 6); 
+		request.setAttribute("page",page);
 		request.setAttribute("articllist", list);   //将添加结果返回给页面
 		ActionResult ar = null;
 		if(list!=null){

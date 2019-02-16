@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class ArticleIndexFilter implements Filter {
-
+	
 	@Override
 	public void destroy() {
 		
@@ -23,7 +23,7 @@ public class ArticleIndexFilter implements Filter {
 			throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest)request;
 		HttpServletResponse resp = (HttpServletResponse)response;
-		req.getRequestDispatcher("showarticle.do").forward(req, resp);
+		req.getRequestDispatcher("showarticle.do?").forward(req, resp);
 	}
 
 	@Override

@@ -24,16 +24,16 @@ public class AddArticleAction extends DispatcherAction {
 	 		throws ServletException, IOException {
 		AddArticleForm cf = (AddArticleForm) form;
 		boolean result = ls.addArticle(cf);
+		
 		request .setAttribute("add_articl_result", result);
 		ActionResult ar = null;
-		ResultContent rc = new ResultContent("add_articl_jsp",result);
+		ResultContent rc = new ResultContent("add_articl_jsp");
 		if(result){
 			System.out.println("添加成功");
 		}else{
 			System.out.println("添加失败");
 		}
 		ar = new ActionResult(rc, ResultType.Forward); // 转发到add_articl在属性文件中对应的jsp页面
-		System.out.println("rc的url+++++"+rc.getUrl());
 		return ar;
 	}
 }

@@ -1,12 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <base href="<%=basePath%>">
   <meta charset="UTF-8">
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
   <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
+  <link href="res/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	    <link href="res/font-awesome.min.css" rel="stylesheet" type="text/css">
+	    <script src="res/jquery.min.js" type="text/javascript"></script>
+	    <script src="res/bootstrap.min.js" type="text/javascript"></script>
+  
+  
   <script type="text/javascript" src="res/layui/layui.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -25,9 +36,6 @@
       </div>
     </div>
   </div>
-
-
-
   <div class="header">
     <div class="headerLayout w1200">
       <div class="headerCon">
@@ -77,24 +85,29 @@
             </div>
           </div>
         </c:forEach>
-        
-        
-        
-         
-         
-         
-          
-          
-          
-         
-          
-         
-          
-          
-          
-          
         </div>
-        <div id="demo0" style="text-align: center;"></div>
+        
+        <div id="fenye" style="text-align: center">
+        <nav aria-label="Page navigation">
+  <ul class="pagination">
+  <li><a href="information.jsp?page=1">首页</a></li>
+    <li>
+      <a href="information.jsp?page=${page-1}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">${page}</a></li>
+    <li>
+      <a href="information.jsp?page=${page+1}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    <li><a href="information.jsp?page=-1">末页</a></li>
+     <li><a href="#">总共10页</a></li>
+  </ul>
+</nav>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -114,15 +127,31 @@
     {{# })}}
   </script> -->
 <script>
-  layui.config({
+  /* layui.config({
     base: 'res/static/js/util/' //你存放新模块的目录，注意，不是layui的模块目录
   }).use(['mm','laypage'],function(){
       var
       mm = layui.mm,laypage = layui.laypage;
       laypage.render({
-        elem: 'demo0'
-        ,count: 100 //数据总数
-      });
+         elem: 'demo0',
+         count: 100 ,
+         next:">>", 
+         theme:"#0099ff", 
+         layout: ['count', 'prev', 'page', 'next', 'limit', 'skip'], 
+         count:total, 
+         curr:page,
+         /* jump:function(data, first){ 
+        	 var page=data.curr;
+        	 $("#currPage").val(page); 
+        	 var limt=data.limit; 
+        	 $("#limit").val(limt);
+        	 if(!first){ 
+        		 //点击右下角分页时调用 studentInfo(); 
+        		 alert("hahahahah")
+        		 } 
+        	 }
+        
+      }); */
     // 模版引擎导入
      // var html = demo.innerHTML;
      // var listCont = document.getElementById('list-cont');
@@ -136,7 +165,7 @@
      //      console.log(res);
      //    }
      //  })   
-});
+//});
 
 </script>
 

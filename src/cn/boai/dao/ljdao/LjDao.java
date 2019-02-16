@@ -1,10 +1,11 @@
 package cn.boai.dao.ljdao;
 
+import java.sql.Connection;
 import java.util.List;
 
-import com.mysql.jdbc.Connection;
-
-import cn.boai.pojo.Address;
+import cn.boai.pojo.Article;
 
 public interface LjDao {
+	 public int getArticleMaxPageNum(int pagesize,Connection conn)throws Exception;  //获得最大页码数
+	 public List<Article> SplitArticleList(int curpage,int pagesize,Connection conn)throws Exception;  //获得最大页码数
 }
