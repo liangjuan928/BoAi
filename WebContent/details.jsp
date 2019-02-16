@@ -62,10 +62,10 @@
 		var tY = target.offsetTop;
 		var tW = target.offsetWidth-45;
 		var tH = target.offsetHeight;
-		console.log(tX+"-"+tY+"-"+tW+"-"+tH);
+		//console.log(tX+"-"+tY+"-"+tW+"-"+tH);
 		
 		//5. 通过定时器setInterval来改变当前位置和宽高向目标靠拢
-		setInterval(function(){
+		var timeid=setInterval(function(){
 			cX = cX+(tX-cX)/10;
 			cY = cY+(tY-cY)/10;
 			cW = cW+(tW-cW)/10;
@@ -79,10 +79,11 @@
 			
 			//6. 判断克隆元素的offsetLeft和offsetTop是否等于目标的offsetLeft和offsetTop
 			if(_gd.offsetTop===target.offsetTop){
-			     console.log(888);
+			     //console.log(888);
 			     //_gd.parentNode.removeChild(_gd);
-			     //addcart.parentNode.removeChild(_gd);
+			     //addcart.parentNode.removeChild(addcart);
 			     _gd.remove();
+			     window.clearInterval(timeid);
 			}
 		},30);
   	}
