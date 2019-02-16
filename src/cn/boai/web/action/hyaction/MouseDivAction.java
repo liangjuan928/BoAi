@@ -23,6 +23,6 @@ public class MouseDivAction implements Action{
 		String uid = request.getParameter("divid");
 		User u=hs.queryUserById(uid);
 		System.out.println("测试得到结果"+u.getUser_id()+u.getUser_name());
-		return new ActionResult(new ResultContent("index",u.getUser_id()+u.getUser_name()),ResultType.Ajax);
+		return new ActionResult(new ResultContent("index",u),ResultType.Ajax);
 	}
 }

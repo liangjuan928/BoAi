@@ -2,11 +2,18 @@
 <%@page import="cn.boai.service.hyservice.impl.HyServiceImpl"%>
 <%@page import="cn.boai.service.hyservice.HyService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+
+<% 
+	String divid="1";
+	pageContext.setAttribute("divid", divid);
+ %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>博爱母婴商城首页 zwtzwt</title>
+  <title>博爱母婴商城首页 </title>
   <link rel="stylesheet" type="text/css" href="res/static/css/main.css">
   <link rel="stylesheet" type="text/css" href="res/layui/css/layui.css">
   <script type="text/javascript" src="res/layui/layui.js"></script>
@@ -40,42 +47,42 @@
 			if(xmlHttp.readyState==4){
 				if(xmlHttp.status==200){
 					result= xmlHttp.responseText;//String的json
-					result = result.trim();
-					console.log(result+"----------------");
+				    console.log(result);
+				    
+				    result=result.split(",");
 				}
 			}
 		}
 		
 		var div;
+		
 		function showPosition(){
-		    console.log(result+"=======");
+		    console.log(div+"----------");
 			if(div){
-				document.body.removeChild(div);
+				div.style.display="none";
 			}
 			div = document.createElement("div");
 			div.style.position = "absolute";
 			div.style.top=event.y+5;
 			div.style.left=event.x+5;
-			div.style.width="11px";
-			div.style.height="11px";
-			div.style.background="blue";
+			div.style.width="333px";
+			div.style.height="111px";
+			div.style.background="yellow";
+			div.style.display="block";
 			div.innerHTML=result;
-			document.body.appendChild(div);
+			document.getElementById("divp").appendChild(div);
 		}
 		
 		function removeDiv(){
 			if(div){
-				document.body.removeChild(div);
+				div.style.display="none";
+				//document.divpp.removeChild(div);
 			}
 		} 
 		
   </script>
 </head>
 
-<% 
-	String divid="1";
-	pageContext.setAttribute("divid", divid);
- %>
 
 <body id="list-cont">
   <div class="site-nav-bg">
@@ -84,13 +91,11 @@
         <i class="layui-icon layui-icon-home"></i>
         <a href="#">首页 </a>
       </p>
-      <div class="sn-quick-menu">
-        <form id="mForm">
-        <div id="${divid}" onmouseenter="show('${divid}')" 
+      <div class="sn-quick-menu" id="divp">
+        <div id="${divid}" name="divp" onmouseenter="show('${divid}')" 
     					onmousemove="showPosition()" onmouseout="removeDiv()">
     		 mousediv &nbsp;&nbsp;&nbsp;
     	</div>
-    	</form>
         <div class="login"><a href="login.jsp">登录</a></div>
         <div class="sp-cart"><a href="shopcart.jsp">购物车</a><span>2</span></div>
       </div>

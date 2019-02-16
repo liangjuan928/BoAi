@@ -88,6 +88,7 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 	                break;  
 	            case Ajax:  
 	                PrintWriter pw = resp.getWriter();  
+	                System.out.println(resultContent.getJson());
 	                pw.println(resultContent.getJson());  
 	                pw.close();  
 	                break;  
