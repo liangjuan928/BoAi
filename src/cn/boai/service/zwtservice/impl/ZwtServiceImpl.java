@@ -12,12 +12,15 @@ import java.util.List;
 import cn.boai.dao.daopack.AddressDao.AddressDao;
 import cn.boai.dao.daopack.CommentDao.CommentDao;
 import cn.boai.dao.daopack.CommentDao.impl.CommentDaoImpl;
+import cn.boai.dao.daopack.ProductDao.ProductDao;
+import cn.boai.dao.daopack.ProductDao.impl.ProductDaoImpl;
 import cn.boai.dao.daopack.UserDao.UserDao;
 import cn.boai.dao.daopack.UserDao.impl.UserDaoImpl;
 import cn.boai.db.DBHelper;
 import cn.boai.pojo.Address;
 import cn.boai.pojo.Article;
 import cn.boai.pojo.Comment;
+import cn.boai.pojo.Product;
 import cn.boai.pojo.User;
 import cn.boai.service.zwtservice.ZwtService;
 import cn.boai.web.form.zwtform.AddCommForm;
@@ -25,6 +28,7 @@ import cn.boai.web.form.zwtform.AddCommForm;
 public class ZwtServiceImpl implements ZwtService{
 	CommentDao cd=new CommentDaoImpl();
 	UserDao ud=new UserDaoImpl();
+	ProductDao pd=new ProductDaoImpl();
 
 	@Override
 	public boolean addComm(AddCommForm form) {
@@ -76,6 +80,18 @@ public class ZwtServiceImpl implements ZwtService{
 			e.printStackTrace();
 		}
 		return user;
+	}
+
+	@Override
+	public Product queryProductById(String pro_id) {
+		Connection conn=DBHelper.getConnection();
+		Product product=null;
+		try {
+			product=pd.selectProductById(pro_id, conn);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return product;
 	}
 
 	
