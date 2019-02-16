@@ -98,7 +98,7 @@
 </head>
 <body>
 
-	<%session.setAttribute("user_id", "111"); %>
+	<%session.setAttribute("user_id", "321"); %>
 	<%String user_id=(String)session.getAttribute("user_id"); %>
 	<%session.setAttribute("pro_id", "123"); %>
 	<%String pro_id=(String)session.getAttribute("pro_id"); %>
@@ -115,16 +115,16 @@
 	  	 %>
 
 	    
-	    <table border="1px">
+	    <table>
 	    	<%for(int i = 0;i<list.size();i++){ %>
 	    		<tr>
 	    			<td rowspan="2" align="center" width="150px" height="100px">
-	    				<img class="media-object img-circle" img src="img/touxiang.jpeg" alt="头像" width="80">
+	    				<img class="media-object img-circle" src="img/touxiang.jpeg" alt="头像" width="80">
 	    			</td>
 	    			<td width="50px" align="right" valign="middle">
 	    				<b style="color:#db6d4c;">评价：</b>
 	    			</td>
-	    			<td align="left" valign="middle" width="200px" height="50px">
+	    			<td align="left" valign="middle" width="600px">
 	    				<p>
 	    					<%
 			    				int type=list.get(i).getCom_type();
@@ -145,8 +145,10 @@
 			    			 			break;
 			    			 	}
 			    			 %>
-			    			 <img src="<%=commphoto %>" style="height:40px;weight:40px;display:inline-block;">
-			    			 <%=commtype %>
+			    			 <div valign="middle">
+				    			 <img style="height:35px;weight:35px;display:inline-block;" src="<%=commphoto %>">
+				    			 <%=commtype %>
+			    			 </div>
 	    				</p>
 	    			</td>
 				</tr>
@@ -154,10 +156,10 @@
 	    			<td align="right" valign="top">
 	    				<b style="color:#db6d4c;">评论：</b>
 	    			</td>
-	    			<td align="left" valign="top">
-	    				<p>
-	    					<%=list.get(i).getCom_content() %>
-	    				</p>
+	    			<td align="left" valign="top" width="600px">
+		    			<p>
+		    				<%=list.get(i).getCom_content() %>
+		    			</p>
 	    			</td>
 				</tr>
 				<tr>
