@@ -77,18 +77,14 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 			}
 			ActionResult actionResult = action.execute(req, resp,actionform);  //这里调用的实际是子类的execute方法
 	            ResultContent resultContent = actionResult.getResultContent();  
-	         
 	            String contextPath = req.getContextPath() + "/";  
-	            System.out.println("contextpath=============="+contextPath);
-	            String servletPath = req.getServletPath();
-	            
 	            switch(actionResult.getResultType()) {  
 	            //config.getProperty(resultContent.getUrl()) 获取配置文件中的路径，注意配置文件中填写全路径
 	            case Redirect:  
-	                resp.sendRedirect(config.getProperty(resultContent.getUrl()));  
+	                resp.sendRedirect(contextPath+config.getProperty(resultContent.getUrl()));  
 	                break;  
 	            case Forward:  
-	                req.getRequestDispatcher(config.getProperty(resultContent.getUrl()))  
+	                req.getRequestDispatcher("/"+config.getProperty(resultContent.getUrl()))  
 	                        .forward(req, resp);  
 	                break;  
 	            case Ajax:  

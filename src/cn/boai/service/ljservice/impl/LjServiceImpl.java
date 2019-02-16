@@ -23,6 +23,7 @@ public class LjServiceImpl implements LjService{
 		Date date=new Date();
 		java.sql.Date date2 =new java.sql.Date(date.getTime());
 		article.setArticle_time(date2);
+		article.setArticle_type(form.getType());
 		boolean result=false;
 		try {
 			result=ad.saveArticle(article, conn);

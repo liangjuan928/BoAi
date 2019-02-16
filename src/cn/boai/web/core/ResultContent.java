@@ -18,6 +18,8 @@ public class ResultContent {
 	    	this.url = url; 
 	        this.obj = obj;  
 	    }  
+	    
+	    
 	      
 	    public String getUrl() {  
 	        return url;  
@@ -25,5 +27,7 @@ public class ResultContent {
 	      //将响应对象转换为json格式
 	    public String getJson() { 
 	    	return new Gson().toJson(obj);
-	    }  
+	    }
+
+		 
 }

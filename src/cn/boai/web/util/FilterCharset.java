@@ -48,7 +48,6 @@ public class FilterCharset implements Filter{
 //		   }
 		   }
 //		   response.setContentType("text/html;charset=utf-8");
-		   System.out.println("进入字符转码过滤器");
 		   response.setCharacterEncoding("utf-8");
            chain.doFilter(req, resp);
 	}

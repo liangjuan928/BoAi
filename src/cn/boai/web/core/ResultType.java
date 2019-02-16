@@ -25,4 +25,5 @@ public enum ResultType {
      * 重定向到下一个控制器 
      */  
     RedirectChain  
+   
 }
