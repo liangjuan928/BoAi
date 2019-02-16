@@ -48,8 +48,6 @@
 				if(xmlHttp.status==200){
 					result= xmlHttp.responseText;//String的json
 				    console.log(result);
-				    
-				    result=result.split(",");
 				}
 			}
 		}
@@ -58,18 +56,22 @@
 		
 		function showPosition(){
 		    console.log(div+"----------");
-			if(div){
+			/* if(div){
 				div.style.display="none";
-			}
+			} */
 			div = document.createElement("div");
 			div.style.position = "absolute";
 			div.style.top=event.y+5;
 			div.style.left=event.x+5;
-			div.style.width="333px";
-			div.style.height="111px";
+			div.style.width="111px";
+			div.style.height="55px";
 			div.style.background="yellow";
 			div.style.display="block";
-			div.innerHTML=result;
+			
+			var msg="id:"+JSON.parse(result).user_id+"      lev:"+
+			          JSON.parse(result).user_level+"<br/>"+"name："
+			          +JSON.parse(result).user_name ;
+			div.innerHTML=msg;
 			document.getElementById("divp").appendChild(div);
 		}
 		
