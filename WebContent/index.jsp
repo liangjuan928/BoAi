@@ -34,7 +34,7 @@
 			xmlHttp.open("GET","moudiv.do?divid="+id,true);
 			xmlHttp.onreadystatechange=callback2;
 			xmlHttp.send();
-		}
+		}  
 		var result;
 		function callback2(){
 			if(xmlHttp.readyState==4){
