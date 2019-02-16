@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1, user-scalable=no">
@@ -14,12 +13,10 @@
     <link href="/style/css/common.css" rel="stylesheet">
 <link href="/favicon.ico" rel="shortcut icon"/>
     <link rel="stylesheet" href="/style/css/share_style0_24.css">
-
 <script src="/style/js/all.js"></script>
 <script type="text/javascript">
 show_ad();
 </script>
-
 </head>
 <body>
             <!---con-header-->

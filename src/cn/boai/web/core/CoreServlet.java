@@ -52,7 +52,6 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 			String formname=config.getProperty(uri+"Form");
 			ActionForm actionform=null;
 			if(formname!=null){
-			
 				try {
 					//loginform需要不断的new出新实例，因为用户提交的数据可能每一次都不一样
 					System.out.println("formname==============="+formname);
