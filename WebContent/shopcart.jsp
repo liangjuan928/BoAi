@@ -1,4 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%
+	String id="1";
+	session.setAttribute("uid", id);
+ %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +15,12 @@
   <script type="text/javascript" src="res/layui/layui.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <script type="text/javascript">
+  	function tan1(){
+  		alert("您已结算成功，您的宝贝正在向您飞奔。。。 ");
+		
+  	}
+  </script>
 </head>
 <body>
 
@@ -264,7 +276,7 @@
           <span class="batch-dele-btn">批量删除</span>
         </div>
         <div class="th Settlement">
-          <button class="layui-btn">结算</button>
+          <button class="layui-btn" onclick="tan1()">结算</button>
         </div>
         <div class="th total">
           <p>应付：<span class="pieces-total">0</span></p>
