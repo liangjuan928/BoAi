@@ -23,7 +23,7 @@ public class ArticleIndexFilter implements Filter {
 			throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest)request;
 		HttpServletResponse resp = (HttpServletResponse)response;
-		req.getRequestDispatcher("showarticle.do?").forward(req, resp);
+		req.getRequestDispatcher("showarticle.do").forward(req, resp);
 	}
 
 	@Override

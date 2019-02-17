@@ -9,49 +9,49 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class SafePassWord {
 	 /**
-  	 * ¼ÓÃÜÃÜÂë
+  	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   	 * @throws Exception 
   	 */
   	public static  String encodePassword(String pass ,String encodestr) throws Exception{
-  		 KeyGenerator kgen = KeyGenerator.getInstance("AES");// ´´½¨AESµÄKeyÉú²úÕß
+  		 KeyGenerator kgen = KeyGenerator.getInstance("AES");
   		
-          kgen.init(128, new SecureRandom(pass.getBytes()));// ÀûÓÃÓÃ»§ÃÜÂë×÷ÎªËæ»úÊı³õÊ¼»¯³ö
-                                                                  // 128Î»µÄkeyÉú²úÕß
-            //¼ÓÃÜÃ»¹ØÏµ£¬SecureRandomÊÇÉú³É°²È«Ëæ»úÊıĞòÁĞ£¬password.getBytes()ÊÇÖÖ×Ó£¬Ö»ÒªÖÖ×ÓÏàÍ¬£¬ĞòÁĞ¾ÍÒ»Ñù£¬ËùÒÔ½âÃÜÖ»ÒªÓĞpassword¾ÍĞĞ
+          kgen.init(128, new SecureRandom(pass.getBytes()));
+                                                                  // 128Î»ï¿½ï¿½keyï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+          
 
-            SecretKey secretKey = kgen.generateKey();// ¸ù¾İÓÃ»§ÃÜÂë£¬Éú³ÉÒ»¸öÃÜÔ¿
+            SecretKey secretKey = kgen.generateKey();
 
-           byte[] enCodeFormat = secretKey.getEncoded();// ·µ»Ø»ù±¾±àÂë¸ñÊ½µÄÃÜÔ¿£¬Èç¹û´ËÃÜÔ¿²»Ö§³Ö±àÂë£¬Ôò·µ»Ø
-           SecretKeySpec key = new SecretKeySpec(enCodeFormat, "AES");// ×ª»»ÎªAES×¨ÓÃÃÜÔ¿
+           byte[] enCodeFormat = secretKey.getEncoded();
+           SecretKeySpec key = new SecretKeySpec(enCodeFormat, "AES");
 
-           Cipher cipher = Cipher.getInstance("AES");// ´´½¨ÃÜÂëÆ÷
+           Cipher cipher = Cipher.getInstance("AES");
 
           byte[] byteContent = encodestr.getBytes();
 
-           cipher.init(Cipher.ENCRYPT_MODE, key);// ³õÊ¼»¯Îª¼ÓÃÜÄ£Ê½µÄÃÜÂëÆ÷
+           cipher.init(Cipher.ENCRYPT_MODE, key);
 
-            byte[] result = cipher.doFinal(byteContent);// ¼ÓÃÜ
+            byte[] result = cipher.doFinal(byteContent);
 
-             return bytesToHexFun3(result);     //½«¼ÓÃÜºóµÄ×Ö½ÚÊı×é×ª»»ÎªÊ®Áù½øÖÆÊı
+             return bytesToHexFun3(result);    
   	}
 	/**
- 	 * ½âÃÜÃÜÂë
+ 	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  	 */
  	public static String decodePassword(String pass ,String encodestr) throws Exception{
- 		       KeyGenerator kgen = KeyGenerator.getInstance("AES");   // ´´½¨AESµÄKeyÉú²úÕß
+ 		       KeyGenerator kgen = KeyGenerator.getInstance("AES");   // ï¿½ï¿½ï¿½ï¿½AESï¿½ï¿½Keyï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  		             kgen.init(128, new SecureRandom(pass.getBytes()));
- 		             SecretKey secretKey = kgen.generateKey();    // ¸ù¾İÓÃ»§ÃÜÂë£¬Éú³ÉÒ»¸öÃÜÔ¿
- 	                byte[] enCodeFormat = secretKey.getEncoded();    // ·µ»Ø»ù±¾±àÂë¸ñÊ½µÄÃÜÔ¿
- 		            SecretKeySpec key = new SecretKeySpec(enCodeFormat, "AES");   // ×ª»»ÎªAES×¨ÓÃÃÜÔ¿
- 		            Cipher cipher = Cipher.getInstance("AES");   // ´´½¨ÃÜÂëÆ÷
- 		             cipher.init(Cipher.DECRYPT_MODE, key);       // ³õÊ¼»¯Îª½âÃÜÄ£Ê½µÄÃÜÂëÆ÷
- 		             //½«Ê®Áù½øÖÆ×Ö·û´®×ª»»Îª×Ö½ÚÊı×éÔÙ½âÃÜ
+ 		             SecretKey secretKey = kgen.generateKey();    // ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ô¿
+ 	                byte[] enCodeFormat = secretKey.getEncoded();    // ï¿½ï¿½ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Ô¿
+ 		            SecretKeySpec key = new SecretKeySpec(enCodeFormat, "AES");   // ×ªï¿½ï¿½ÎªAES×¨ï¿½ï¿½ï¿½ï¿½Ô¿
+ 		            Cipher cipher = Cipher.getInstance("AES");   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ 		             cipher.init(Cipher.DECRYPT_MODE, key);       // ï¿½ï¿½Ê¼ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ 		             //ï¿½ï¿½Ê®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½×ªï¿½ï¿½Îªï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù½ï¿½ï¿½ï¿½
  		             byte[] b=toBytes(encodestr);
  		            byte[] result = cipher.doFinal(b);  
- 		            return new String(result); // Ã÷ÎÄ   
+ 		            return new String(result); // ï¿½ï¿½ï¿½ï¿½   
  	}
  	/**
- 	 * ×Ö½ÚÊı×é×ª»»ÎªÊ®Áù½øÖÆ
+ 	 * ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ÎªÊ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  	 * @param bytes
  	 * @return
  	 */
@@ -68,7 +68,7 @@ public class SafePassWord {
      }
  	 
  	 /**
- 	  * ½«Ê®Áù½øÖÆ×Ö·û´®×ª»»Îª×Ö½ÚÊı×é
+ 	  * ï¿½ï¿½Ê®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½×ªï¿½ï¿½Îªï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½
  	  * @param str
  	  * @return
  	  */
@@ -76,12 +76,12 @@ public class SafePassWord {
  		int hexlen = str.length();  
  	    byte[] result;  
  	    if (hexlen % 2 == 1){  
- 	        //ÆæÊı  
+ 	        //ï¿½ï¿½ï¿½ï¿½  
  	        hexlen++;  
  	        result = new byte[(hexlen/2)];  
  	       str="0"+str;  
  	    }else {  
- 	        //Å¼Êı  
+ 	        //Å¼ï¿½ï¿½  
  	        result = new byte[(hexlen/2)];  
  	    }  
  	    int j=0;  

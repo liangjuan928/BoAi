@@ -10,6 +10,7 @@ import java.util.List;
 
 import cn.boai.dao.ljdao.LjDao;
 import cn.boai.pojo.Article;
+import cn.boai.pojo.Product;
 
 public class LjDaoImpl implements LjDao {
    /**
@@ -41,19 +42,48 @@ public class LjDaoImpl implements LjDao {
 		ResultSet rs = ps.executeQuery();
 		while(rs.next()){
 			Article article = new Article();
-			article.setArticle_id(rs.getInt("article_id"));
+			article.setArticle_id(rs.getInt("article_id"));   
 			article.setArticle_title(rs.getString("article_title"));
 			article.setArticle_time(rs.getDate("article_time"));
 			article.setArticle_body(rs.getString("article_body"));
 			article.setArticle_def(rs.getString("article_defalt"));
 			article.setArticle_describe(rs.getString("article_describe"));
-			article.setArticle_type(rs.getString("article_type"));
+			article.setArticle_type(rs.getString(   "article_type"));
 			list.add(article);
 		}
 		rs.close();
 		ps.close();
 		return list;
 	}
+	
+	
+	
+	
+	
+@Override
+public List<Product> SplitArticleListByKey(String keys, Connection conn) throws Exception {
+	// TODO Auto-generated method stub
+	return null;
+}
+@Override
+public List<Product> SplitArticleListByType(int type, Connection conn) throws Exception {
+	// TODO Auto-generated method stub
+	return null;
+}
+@Override
+public List<Product> SplitArticleListBySale(int sales, Connection conn) throws Exception {
+	// TODO Auto-generated method stub
+	return null;
+}
+@Override
+public List<Product> SplitArticleListByPrice(double price, Connection conn) throws Exception {
+	// TODO Auto-generated method stub
+	return null;
+}
+	
+	
+	
+	
 
 	
 
