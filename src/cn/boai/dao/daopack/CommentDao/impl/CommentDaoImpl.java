@@ -4,9 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import cn.boai.dao.daopack.CommentDao.CommentDao;
+import cn.boai.db.DBHelper;
 import cn.boai.pojo.Comment;
 import cn.boai.pojo.User;
 
@@ -97,4 +99,23 @@ public class CommentDaoImpl implements CommentDao{
 		return list;
 	}
 
+//	public static void main(String[] args) {
+//		Connection conn=DBHelper.getConnection();
+//		CommentDao cd=new CommentDaoImpl();
+//		Comment comment=new Comment();
+//		comment.setCom_content("awegwe");
+//		comment.setUser_id("11");
+//		comment.setCom_type(1);
+//		comment.setPro_id("123");
+//		Date date=new Date();
+//		java.sql.Date d= new java.sql.Date(date.getTime());
+//		comment.setCom_time(d);
+//		try {
+//			cd.saveComm(comment, conn);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//	}
 }

@@ -21,6 +21,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <script type="text/javascript" src="res/layui/layui.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <style>
+  #arttilte{
+  text-decoration: none;
+  color: orange;
+  font-size: 23px;
+  }
+  #arttilte:HOVER{
+     text-decoration: underline;
+  }
+  
+  
+  </style>
+
+
 </head>
 <body>
 
@@ -76,11 +90,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <c:forEach items="${articllist}" var="art" >
             <div class="item">
             <div class="img">
-              <img src="res/static/img/new1.jpg" alt="">
+           <c:if test="${art.article_id mod 5 eq 0 }">
+           <img src="res/static/img/new2.jpg" alt="" width="323 px" height="322 px">
+           </c:if>
+           <c:if test="${art.article_id mod 5 eq 1 }">
+           <img src="res/static/img/new1.jpg" alt="" width="323 px" height="322 px">
+           </c:if>
+            <c:if test="${art.article_id mod 5 eq 2 }">
+           <img src="res/static/img/new3.jpg" alt="" width="323 px" height="322 px">
+           </c:if>
+            <c:if test="${art.article_id mod 5 eq 3 }">
+           <img src="res/static/img/new4.jpg" alt="" width="323 px" height="322 px">
+           </c:if>
+            <c:if test="${art.article_id mod 5 eq 4 }">
+           <img src="res/static/img/new5.jpeg" alt="" width="323 px" height="322 px">
+           </c:if>
+             
             </div>
             <div class="text">
-              <h4>${art.article_title }</h4>
-              <p class="data">${art.article_time }</p>
+              <a href="articlelist/article1.jsp?artid=${art.article_id }"  id="arttilte">${art.article_title }</a>
+             
+              <p class="data" style="margin-top: 15px">${art.article_time }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <c:if test="${art.article_type eq  1  }"> 新生父母必读</c:if>
+                   <c:if test="${art.article_type eq  2  }"> 笑话集</c:if>
+                   <c:if test="${art.article_type eq  3  }"> 好医术</c:if>
+                   <c:if test="${art.article_type eq  4  }"> 服饰搭配</c:if>
+                   <c:if test="${art.article_type eq  5  }"> 家教微刊</c:if>
+              </p>
               <p class="info-cont">${art.article_describe }</p>
             </div>
           </div>

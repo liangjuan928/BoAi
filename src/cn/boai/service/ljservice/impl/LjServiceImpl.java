@@ -69,7 +69,6 @@ public class LjServiceImpl implements LjService{
 	}
 		return result;
 	}
-	
 
 	@Override
 	public List<Article> SplitArticleList(int curpage, int pagesize) {
@@ -84,6 +83,21 @@ public class LjServiceImpl implements LjService{
 	}
 		return list;
 	}
+
+	@Override
+	public Article getArticleById(int id) {
+		Connection conn=DBHelper.getConnection();
+		Article article=new Article();
+	try {
+		article=ad.selectArticleById(id, conn);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}finally{
+		DBHelper.closeConnection(conn);
+	}
+		return article;
+	}
+	
 	}
       
 	

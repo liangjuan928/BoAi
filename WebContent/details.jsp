@@ -9,8 +9,29 @@
   <script type="text/javascript" src="res/layui/layui.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <script>
+  	function showiframe(val){
+  		document.getElementById("myiframe").src=val;
+  		setIframeHeight(document.getElementById('myiframe'));
+  	}
+  	function setIframeHeight(iframe) {
+	  	if (iframe) {
+		  	var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+		 	if (iframeWin.document.body) {
+			  	iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+		  	}	
+      	}
+	};
+	window.onload = function () {
+		setIframeHeight(document.getElementById('myiframe'));
+	};
+  	
+  </script>
 </head>
 <body>
+	<%
+		
+	%>
 
   <div class="site-nav-bg">
     <div class="site-nav w1200">
@@ -127,10 +148,12 @@
           </div>
         </div>
         <div class="detail">
-          <h4 style="display:inline-block;">详情</h4>
-          <h4 style="display:inline-block;">评论</h4>
+          <h4 style="display:inline-block;" onclick="showiframe('prodetails.jsp')">详情</h4>
+          <h4 style="display:inline-block;" onclick="showiframe('comment.jsp')">评论</h4>
           <div class="item">
-            <img src="res/static/img/details_imgbig.jpg">
+          	 <iframe id="myiframe" src="prodetails.jsp" width="820px" style="border:none;" scrolling="no" onload="changeFrameHeight()">
+          	
+          	</iframe> 
           </div>
         </div>
       </div>

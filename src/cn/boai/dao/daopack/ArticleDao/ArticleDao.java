@@ -10,6 +10,6 @@ public interface ArticleDao {
 	public boolean saveArticle(Article article,Connection conn) throws Exception;
 	public boolean updateArticle(Article article,Connection conn) throws Exception;
 	public boolean deleteArticle(String id,Connection conn) throws Exception;
-	public Article selectArticleById(String id,Connection conn) throws Exception;
+	public Article selectArticleById(int id,Connection conn) throws Exception;
 	public List<Article> selectAllArticle(Connection conn) throws Exception;
 }

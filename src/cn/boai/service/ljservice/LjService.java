@@ -14,4 +14,5 @@ public interface LjService {
 	
 	 public int getArticleMaxPageNum(int pagesize);  //获得最大页码数
 	 public List<Article> SplitArticleList(int curpage,int pagesize);  //获得最大页码数
+	 public Article getArticleById(int id);
 }
