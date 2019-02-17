@@ -85,13 +85,13 @@ public class ArticleDaoImpl implements ArticleDao {
 	
 	
 	@Override
-	public Article selectArticleById(String id, Connection conn) throws Exception {
+	public Article selectArticleById(int id, Connection conn) throws Exception {
 		Article article = null;
 		String sql = "select * from article where article_id = ?";
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ps = conn.prepareStatement(sql);
-		ps.setString(1, id);
+		ps.setInt(1, id);
 		rs = ps.executeQuery();
 		if (rs.next()) {
 			article = new Article();

@@ -18,8 +18,6 @@ public class ResultContent {
 	    	this.url = url; 
 	        this.obj = obj;  
 	    }  
-	    
-	    
 	      
 	    public String getUrl() {  
 	        return url;  
