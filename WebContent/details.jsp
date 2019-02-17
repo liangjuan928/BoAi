@@ -36,7 +36,7 @@
   		document.getElementById(val).setAttribute("class","btn active");
   	}
   	function add(addcart){
-  		
+  		var i=document.getElementById("iii");
 	  	var target=document.querySelector(".sn-quick-menu");
 		//1. 克隆一个当前元素
 		var _gd = addcart.cloneNode(true);
@@ -46,6 +46,8 @@
 		
 		//3. 设置定位方式
 		_gd.style.position="absolute";
+		_gd.value="";
+		//i.parentNode.removeChild(i);
 		addcart.parentNode.appendChild(_gd);
 		
 		//4. 获取克隆元素的位置和宽高，获取目标的位置和宽高 
@@ -63,10 +65,10 @@
 		
 		//5. 通过定时器setInterval来改变当前位置和宽高向目标靠拢
 		var timeid=setInterval(function(){
-			cX = cX+(tX-cX)/10;
-			cY = cY+(tY-cY)/10;
-			cW = cW+(tW-cW)/10;
-			cH = cH+(tH-cH)/10;
+			cX = cX+(tX-cX)/50;
+			cY = cY+(tY-cY)/50;
+			cW = cW+(tW-cW)/50;
+			cH = cH+(tH-cH)/50;
 			
 			
 			_gd.style.top = cY+"px";
@@ -82,7 +84,7 @@
 			     _gd.remove();
 			     window.clearInterval(timeid);
 			}
-		},30);
+		},1);
   	}
   </script>
 </head>
@@ -189,7 +191,7 @@
             </div>
             <div class="choose-btns">
               <button class="layui-btn layui-btn-primary purchase-btn">立刻购买</button>
-              <button id="addcart" class="layui-btn  layui-btn-danger car-btn" onclick="add(this)"><i class="layui-icon layui-icon-cart-simple"></i>加入购物车</button>  
+              <button id="addcart" class="layui-btn  layui-btn-danger car-btn" onclick="add(this)"><i id="iii" class="layui-icon layui-icon-cart-simple"></i>加入购物车</button>  
             </div>
           </div>
         </div>
