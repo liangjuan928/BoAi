@@ -1,5 +1,11 @@
-<%@page import="cn.boai.pojo.Order1"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%
+	Boolean flag=(Boolean)session.getAttribute("newOrder");
+	String str=flag.toString();
+ %>
+ <%=flag %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -24,10 +30,19 @@
   <![endif]-->
 <title>订单</title>
 
+  <script type="text/javascript">
+  	function newOr(flag){
+  		alert(flag);
+  		/* if(true){
+  			alert("您的新订单来啦！");
+  		}else{
+  			alert("暂无新订单！");
+  		} */
+  	}
+  </script>
 </head>
 
-
-<body>
+<body onload="newOr('${flag}')">
 <div class="margin order_style" id="page_style">
 <div class="sum_style margin-bottom ">
  <ul class="clearfix">

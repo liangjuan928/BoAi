@@ -43,8 +43,9 @@ public class AddOrderAction implements Action{
 		boolean flag=hs.addOrder(order);
 		System.out.println(flag+"=============================addOrder"); 
 		
-//		return new ActionResult(new ResultContent("order",flag),ResultType.Forward);
-		return null;
+		request.getSession().setAttribute("newOrder", flag);
+		
+		return new ActionResult(new ResultContent("shopcart"));
 	}
 
 }
