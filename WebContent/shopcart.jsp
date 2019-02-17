@@ -18,7 +18,7 @@
   <script type="text/javascript">
   	function tan1(){
   		alert("您已结算成功，您的宝贝正在向您飞奔。。。 ");
-		
+	    
   	}
   </script>
 </head>
