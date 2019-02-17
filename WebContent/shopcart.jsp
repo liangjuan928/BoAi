@@ -17,8 +17,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <script type="text/javascript">
   	function tan1(){
-  		alert("您已结算成功，您的宝贝正在向您飞奔。。。 ");
-	    
+  		alert("您已免密支付成功，您的宝贝正在向您飞奔。。。 ");
   	}
   </script>
 </head>
