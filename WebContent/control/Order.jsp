@@ -1,3 +1,4 @@
+<%@page import="cn.boai.pojo.Order1"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -24,6 +25,8 @@
 <title>订单</title>
 
 </head>
+
+
 <body>
 <div class="margin order_style" id="page_style">
 <div class="sum_style margin-bottom ">
@@ -38,8 +41,8 @@
   <a href="javascrpit:void" class="btn button_btn btn-info status_btn">所有订单(454)</a>
   <a href="javascrpit:void" class="btn button_btn btn-info status_btn">已完成(454)</a>
   <a href="javascrpit:void" class="btn button_btn btn-info status_btn">未完成(454)</a>
-  <a href="javascrpit:void" class="btn button_btn btn-info status_btn">代发货(454)</a>
-  <a href="javascrpit:void" class="btn button_btn btn-info status_btn">代付款(454)</a>
+  <a href="javascrpit:void" class="btn button_btn btn-info status_btn">待发货(454)</a>
+  <a href="javascrpit:void" class="btn button_btn btn-info status_btn">待付款(454)</a>
  </div>
 <div class="operation clearfix">
 <button class="btn button_btn btn-danger" type="button" onclick=""><i class="fa fa-trash-o"></i>&nbsp;删除</button> 

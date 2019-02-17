@@ -6,7 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cn.boai.pojo.User;
 import cn.boai.service.hyservice.HyService;
 import cn.boai.service.hyservice.impl.HyServiceImpl;
 import cn.boai.web.core.Action;
@@ -26,6 +25,6 @@ public class DeleteCartAction implements Action{
 		System.out.println(uid);
 		System.out.println(pid);
 		System.out.println(flag);
-		return new ActionResult(new ResultContent(flag));
+		return new ActionResult(new ResultContent("shopcart",flag),ResultType.Forward);
 	}
 }

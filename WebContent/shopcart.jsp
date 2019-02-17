@@ -19,6 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <script type="text/javascript">
+  		
 	  	function tan1(){
 	  		alert("您已免密支付成功，您的宝贝正在向您飞奔。。。 ");
 	  		var check=document.getElementsByTagName("input");
@@ -46,6 +47,15 @@
 			form.submit();
 	  	}
 	  	
+	  	
+	  	//加入后台订单
+	  	function addOrder(ud,pd){
+	  		var form=document.getElementById("mForm");
+	  		var tol=document.getElementById("tol").textContent.substr(1);
+	  		form.action="addOrder.do?uid="+ud+"&pids="+pd+"&total="+tol;
+			form.method="post";
+			form.submit();
+	  	}
   </script>
 </head>
 <body>
@@ -229,11 +239,11 @@
           <span class="batch-dele-btn">批量删除</span>
         </div>
         <div class="th Settlement">
-          <button class="layui-btn" onclick="tan1();deleteCart('${uid}','${proid}')">结算</button>
+          <button class="layui-btn" onclick="tan1();deleteCart('${uid}','${proid}');addOrder('${uid}','${proid}');">结算</button>
           <form id="mForm"></form>
         </div>
         <div class="th total">
-          <p>应付：<span class="pieces-total">0</span></p>
+          <p>应付：<span class="pieces-total" id="tol">0</span></p>
         </div>
       </div>
     </div>
