@@ -1,3 +1,4 @@
+<%@page import="java.io.Console"%>
 <%@page import="cn.boai.pojo.Product"%>
 <%@page import="cn.boai.service.zwtservice.impl.ZwtServiceImpl"%>
 <%@page import="cn.boai.service.zwtservice.ZwtService"%>
@@ -28,15 +29,11 @@
 	window.onload = function () {
 		setIframeHeight(document.getElementById('myiframe'));
 	};
-  	function choose(val){
-  		if(val=="white"){
-	  		document.getElementById("white").setAttribute("class","btn active");
-	  		document.getElementById("pink").setAttribute("class","btn");
-  		}else{
-  			document.getElementById("white").setAttribute("class","btn");
-	  		document.getElementById("pink").setAttribute("class","btn active");
+  	function choose(val,length){
+  		for(var i=0;i<length;i++){
+  			document.getElementById(i).setAttribute("class","btn");
   		}
-  		
+  		document.getElementById(val).setAttribute("class","btn active");
   	}
   	function add(addcart){
   		
@@ -97,6 +94,8 @@
 		String pro_id=(String)session.getAttribute("pro_id");
 		ZwtService zs=new ZwtServiceImpl();
 		Product product=zs.queryProductById(pro_id);
+		String color=product.getPro_def();
+		String[] colors=color.split(",");
 	%>
 
   <div class="site-nav-bg">
@@ -173,7 +172,19 @@
               <p class="address-box"><span>送&nbsp;&nbsp;&nbsp;&nbsp;至</span><strong class="address">江西&nbsp;&nbsp;南昌&nbsp;&nbsp;东湖区</strong></p>
             </div>
             <div class="choose-attrs">
-              <div class="color layui-clear"><span class="title">颜&nbsp;&nbsp;&nbsp;&nbsp;色</span> <div class="color-cont"><span id="white" class="btn active" onclick="choose(this.id)">白色</span> <span id="pink" class="btn" onclick="choose(this.id)">粉色</span></div></div>
+              <div class="color layui-clear"><span class="title">颜&nbsp;&nbsp;&nbsp;&nbsp;色</span>
+              	<div class="color-cont">
+              		<%
+              			for(int i=0;i<colors.length;i++){
+              		%>
+              		<span id="<%=i %>" class="btn" onclick="choose(this.id,<%=colors.length %>)"><%=colors[i] %></span>
+					<%
+              			}
+              		%>
+              		<!-- <span id="white" class="btn active" onclick="choose(this.id)"><%=colors[0] %></span>
+					<span id="pink" class="btn" onclick="choose(this.id)"><%=colors[1] %></span> -->
+              	</div>
+              </div>
               <div class="number layui-clear"><span class="title">数&nbsp;&nbsp;&nbsp;&nbsp;量</span><div class="number-cont"><span class="cut btn">-</span><input onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" maxlength="4" type="" name="" value="1"><span class="add btn">+</span></div></div>
             </div>
             <div class="choose-btns">

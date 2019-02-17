@@ -24,6 +24,7 @@ import cn.boai.pojo.Product;
 import cn.boai.pojo.User;
 import cn.boai.service.zwtservice.ZwtService;
 import cn.boai.web.form.zwtform.AddCommForm;
+import cn.boai.web.form.zwtform.AddProductForm;
 
 public class ZwtServiceImpl implements ZwtService{
 	CommentDao cd=new CommentDaoImpl();
@@ -92,6 +93,38 @@ public class ZwtServiceImpl implements ZwtService{
 			e.printStackTrace();
 		}
 		return product;
+	}
+
+	@Override
+	public boolean addProduct(AddProductForm form) {
+		Connection conn=DBHelper.getConnection();
+		Product pro=new Product();
+		pro.setPro_title(form.getPro_title());
+		pro.setPro_describe(form.getPro_describe());
+		pro.setPro_key(form.getPro_key());
+		pro.setPro_oldprice(form.getPro_oldprice());
+		pro.setPro_newprice(form.getPro_newprice());
+		pro.setPro_photo(form.getPro_photo());
+		pro.setType_id(Integer.valueOf(form.getPro_type()));
+		pro.setPro_intro(form.getPro_intro());
+		pro.setPro_def(form.getPro_def());
+		System.out.println(form.getPro_photo()+"==="+form.getPro_intro());
+		
+		boolean flag=false;
+		try {
+			conn.setAutoCommit(false);
+			flag = pd.saveProduct(pro, conn);
+			conn.commit();
+		} catch (Exception e) {
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}finally{
+			DBHelper.closeConnection(conn);
+		}
+		return flag;
 	}
 
 	
