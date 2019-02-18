@@ -11,7 +11,14 @@ public class AddProductForm extends ActionForm {
 	private String pro_type;
 	private String pro_def;
 	private String pro_photo;
+	private String photo_type;
 	private String pro_intro;
+	public String getPhoto_type() {
+		return photo_type;
+	}
+	public void setPhoto_type(String photo_type) {
+		this.photo_type = photo_type;
+	}
 	public String getPro_title() {
 		return pro_title;
 	}

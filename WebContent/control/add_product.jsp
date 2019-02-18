@@ -20,12 +20,25 @@
 <script src="js/css3-mediaqueries.js"  type="text/javascript"></script>
   <![endif]-->
 <title>添加产品</title>
+<script>
+	function change(obj){
+		var fr = new FileReader();
+		var f = obj.files[0];
+		fr.readAsDataURL(f);
+		fr.onload=function(e){
+			document.getElementById("pro_photo").value=e.target.result;
+			var val=obj.value;
+			val=val.substring(val.lastIndexOf(".")+1);
+			document.getElementById("photo_type").value=val;
+		};
+	}
+</script>
 </head>
 
 <body>
 <div class="margin">
 <div class="add_style">
-<form action="add_product.do">
+<form action="add_product.do" method="post">
  <ul>
   <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>标题名称：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="pro_title" type="text"  class="col-xs-6"/></div></li>
   <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>简单描述：&nbsp;&nbsp;</label><div class="Add_content col-xs-11"><input name="pro_describe" type="text" class="col-xs-4"/></div></li>
@@ -62,7 +75,9 @@
      <label class="label_name col-xs-1"><i>*</i>产品图片：&nbsp;&nbsp;</label>
      <div class="Add_content col-xs-11" id="Upload">
      <div class="images_Upload clearfix margin-bottom" id="images_Upload">
-      <span class="Upload_img"><input name="pro_photo" type="file" /></span>
+      <span class="Upload_img"><input type="file" onchange="change(this)" /></span>
+      <input type="hidden"  name="pro_photo" id="pro_photo"></input>
+      <input type="hidden"  name="photo_type" id="photo_type"></input>
       <a href="javascript:ovid()" class="operating delete_Upload" onclick="delete_Upload(this.id)"><i class="fa fa-remove"></i></a>
     </div>
     <button type="button" class="add_Upload bg-deep-blue" id="add_Upload" onclick="add_Upload()"><i class="fa  fa-plus"></i></button>
@@ -70,7 +85,7 @@
      </li>
      <li class="clearfix"><label class="label_name col-xs-1"><i>*</i>内容介绍：&nbsp;&nbsp;</label>
      <div class="Add_content col-xs-11"><script name="pro_intro" id="editor" type="text/plain" style="width:100%;height:500px;"></script></div>
-     </li>  
+     </li>
  </ul>
  <div class="Button_operation btn_width">
  	<input type="hidden" name="param" value="addProduct"></input>
