@@ -31,8 +31,7 @@
 
   <script type="text/javascript">
   	function newOr(flag){
-  		alert(flag);
-  		if(true){
+  		if(flag){
   			alert("您的新订单来啦！");
   		}else{
   			alert("暂无新订单！");
@@ -41,7 +40,7 @@
   </script>
 </head>
 
-<body onload="newOr('${flag}')">
+<body onload="newOr(<%=(Boolean)session.getAttribute("newOrder") %>)">
 <div class="margin order_style" id="page_style">
 <div class="sum_style margin-bottom ">
  <ul class="clearfix">

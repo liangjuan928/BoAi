@@ -8,7 +8,6 @@ import java.util.List;
 
 import cn.boai.dao.daopack.CartDao.CartDao;
 import cn.boai.pojo.Cart;
-import cn.boai.pojo.User;
 import cn.boai.util.UUIDHelp;
 
 public class CartDaoImpl implements CartDao{
