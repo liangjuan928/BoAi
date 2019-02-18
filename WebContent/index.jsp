@@ -3,6 +3,10 @@
 <%@page import="cn.boai.service.hyservice.HyService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 
 <% 
 	String divid="1";
@@ -65,13 +69,15 @@
 			div.style.left=event.x+5;
 			div.style.width="111px";
 			div.style.height="55px";
-			div.style.background="pink";
+			div.style.color="white";
+			//div.style.background="pink";
+			div.style.backgroundImage="url('res/static/img/b1.jpg')";
+			div.style.backgroundSize="cover";
 			div.style.display="block";
 			
-			var msg="id:"+JSON.parse(result).user_id+"      lev:"+
-			          JSON.parse(result).user_level+"<br/>"+"name："
-			          +JSON.parse(result).user_name ;
-			div.innerHTML=msg;
+			var msg="账户："+JSON.parse(result).user_name+"<br/>"+
+					"等级:"+JSON.parse(result).user_level ;
+			div.innerHTML="<img src='res/static/img/b2.jpg'/>"+msg;
 			document.getElementById("divp").appendChild(div);
 		}
 		
@@ -95,7 +101,7 @@
       </p>
       <div class="sn-quick-menu" id="divp">
         <div id="${divid}" name="divp" onmouseenter="show('${divid}')" 
-    					onmousemove="showPosition()" onmouseout="removeDiv()">
+    					onmouseover="showPosition()" onmouseout="removeDiv()">
     		 mousediv &nbsp;&nbsp;&nbsp;
     	</div>
         <div class="login"><a href="login.jsp">登录</a></div>
