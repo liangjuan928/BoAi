@@ -65,7 +65,7 @@
 			div.style.left=event.x+5;
 			div.style.width="111px";
 			div.style.height="55px";
-			div.style.background="yellow";
+			div.style.background="pink";
 			div.style.display="block";
 			
 			var msg="id:"+JSON.parse(result).user_id+"      lev:"+
