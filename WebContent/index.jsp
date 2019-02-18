@@ -2,7 +2,7 @@
 <%@page import="cn.boai.service.hyservice.impl.HyServiceImpl"%>
 <%@page import="cn.boai.service.hyservice.HyService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+  
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -75,7 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			div.style.backgroundSize="cover";
 			div.style.display="block";
 			
-			var msg="账户："+JSON.parse(result).user_name+"<br/>"+
+			var msg="账户："+JSON.parse(result).user_name+"<br/>"+"___"+
 					"等级:"+JSON.parse(result).user_level ;
 			div.innerHTML="<img src='res/static/img/b2.jpg'/>"+msg;
 			document.getElementById("divp").appendChild(div);
