@@ -75,8 +75,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			div.style.backgroundSize="cover";
 			div.style.display="block";
 			
-			var msg="账户："+JSON.parse(result).user_name+"<br/>"+"___"+
-					"等级:"+JSON.parse(result).user_level ;
+			var msg="账户："+JSON.parse(result).user_name+"<br/>"
+					+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+					+"等级:"+JSON.parse(result).user_level ;
 			div.innerHTML="<img src='res/static/img/b2.jpg'/>"+msg;
 			document.getElementById("divp").appendChild(div);
 		}

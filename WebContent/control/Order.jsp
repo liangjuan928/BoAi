@@ -1,9 +1,9 @@
+<%@page import="java.util.List"%>
+<%@page import="cn.boai.service.hyservice.HyService"%>
+<%@page import="cn.boai.service.hyservice.impl.HyServiceImpl"%>
+<%@page import="cn.boai.pojo.Order1"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<%
-	Boolean flag=(Boolean)session.getAttribute("newOrder");
-	String str=flag.toString();
- %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -93,6 +93,11 @@
 </div>
 </body>
 </html>
+<%
+	HyService hs=new HyServiceImpl();
+	List<Order1> list=hs.queryAllOrder();
+	pageContext.setAttribute("list",list);
+ %>
 <script>
 var dataSet=[
  ['<label><input type="checkbox" class="ace"><span class="lbl"></span></label>','1','201608250560345','2016-08-25 12:23:34','345.50','3','已完成','2016-08-28 15:23:12','',' <a href="javascript:void()" onclick="picture_del(this,'+10001+')" class="btn btn-danger operation_btn">删除</a> <a href="Order_detailed.jsp" onclick="picture_img(this,'+234+')" class="btn bg-deep-blue operation_btn">查看</a>'],
